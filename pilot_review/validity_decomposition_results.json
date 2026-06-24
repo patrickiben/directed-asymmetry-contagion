@@ -1,0 +1,23 @@
+{
+  "synthetic": {
+    "none": 3544.9,
+    "reductions": {
+      "none": 0.0,
+      "greedy": 57.0,
+      "static-transmit": 94.8,
+      "mpc-oracle": 98.3
+    },
+    "static_captures_pct_of_mpc": 96.4
+  },
+  "covid": {
+    "none": 21547.6,
+    "reductions": {
+      "none": 0.0,
+      "greedy": 0.2,
+      "static-transmit": 31.9,
+      "mpc-oracle": 28.3
+    },
+    "static_captures_pct_of_mpc": 112.7
+  },
+  "verdict": "INSIGHT dominates: the static transmitter rule captures most of the anticipatory planner's gain, so the world-model machinery adds only a modest increment"
+}

@@ -1,0 +1,5 @@
+# Pinned environment for reproduce_oos.py (verified to regenerate EXPECTED_OUTPUT.txt).
+# Python 3.9+; CPU-only; no GPU. Install: python3 -m pip install -r requirements.txt
+numpy==2.0.2
+pandas==2.3.3
+scipy==1.13.1

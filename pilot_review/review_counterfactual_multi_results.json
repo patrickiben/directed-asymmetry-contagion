@@ -1,0 +1,32 @@
+{
+  "Sovereign (OMT 2012)": {
+    "rmse_noaction": 26.57,
+    "rmse_intervention": 3.98,
+    "rmse_reduction_pct": 85.0,
+    "gbest": 0.37
+  },
+  "EM currency (2018)": {
+    "rmse_noaction": 1018.72,
+    "rmse_intervention": 22.57,
+    "rmse_reduction_pct": 97.8,
+    "gbest": 0.07
+  },
+  "Induced seismicity (2015)": {
+    "rmse_noaction": 47.6,
+    "rmse_intervention": 16.54,
+    "rmse_reduction_pct": 65.3,
+    "gbest": 0.17
+  },
+  "Opioid overdose (2023)": {
+    "rmse_noaction": 37.82,
+    "rmse_intervention": 6.07,
+    "rmse_reduction_pct": 83.9,
+    "gbest": 0.02
+  },
+  "Housing (TARP 2008)": {
+    "rmse_noaction": 53.23,
+    "rmse_intervention": 2.76,
+    "rmse_reduction_pct": 94.8,
+    "gbest": 0.49
+  }
+}

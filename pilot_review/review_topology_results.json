@@ -1,0 +1,15 @@
+{
+  "N": 24,
+  "days": 1258,
+  "b0_range": [
+    1,
+    22
+  ],
+  "theta_star_range": [
+    0.17,
+    0.78
+  ],
+  "spearman_thetastar_vol": 0.49,
+  "spearman_thetastar_p": 1.1994751010315283e-25,
+  "spearman_b0_vol": -0.64
+}

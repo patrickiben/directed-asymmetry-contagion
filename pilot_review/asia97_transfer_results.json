@@ -1,0 +1,47 @@
+{
+  "currencies": [
+    "Thai",
+    "Korea",
+    "Malay",
+    "Singa",
+    "Japan",
+    "Taiwan",
+    "HK",
+    "India",
+    "China"
+  ],
+  "n_weeks": 135,
+  "dy_total": 54.1,
+  "transmitter": "Thai",
+  "loudest": "Korea",
+  "peak_deprec": {
+    "Thai": 113.7,
+    "Korea": 125.0,
+    "Malay": 83.1,
+    "Singa": 25.9,
+    "Japan": 34.4,
+    "Taiwan": 27.2,
+    "HK": 0.3,
+    "India": 21.8,
+    "China": 0.1
+  },
+  "interdiction": {
+    "none": 0.0,
+    "greedy": 5.8,
+    "mpc": 16.4,
+    "corr": 9.6,
+    "var-out": 10.8,
+    "spillover": 11.6,
+    "transmitter": 13.1
+  },
+  "symmetrization_advantage": [
+    7.3,
+    0.2,
+    -3.0,
+    -3.6,
+    -3.0
+  ],
+  "transmitter_not_loudest": true,
+  "arro_over_greedy_x": 2.28,
+  "verdict": "CONFIRMED (loudest != transmitter): the crisis transmitter is Thai (an early-crisis ASEAN currency) while the loudest casualty is Korea; transmitter-targeting beats greedy x2.3, the directed methods beat undirected, and the edge collapses under symmetrization -- a second COVID-style confirmation on a genuinely new (financial) domain."
+}

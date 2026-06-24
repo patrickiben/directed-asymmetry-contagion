@@ -1,0 +1,63 @@
+{
+  "states": [
+    "NY",
+    "NJ",
+    "PA",
+    "CT",
+    "MA",
+    "RI",
+    "VT",
+    "NH",
+    "ME",
+    "OH",
+    "MI",
+    "IL",
+    "WI",
+    "MN",
+    "IN",
+    "MD",
+    "VA"
+  ],
+  "n_days": 92,
+  "dy_total": 82.4,
+  "transmitter": "WI",
+  "loudest": "MI",
+  "peak_pm25": {
+    "NY": 158.3,
+    "NJ": 140.3,
+    "PA": 126.2,
+    "CT": 107.7,
+    "MA": 38.6,
+    "RI": 39.1,
+    "VT": 53.5,
+    "NH": 32.9,
+    "ME": 22.0,
+    "OH": 128.9,
+    "MI": 119.1,
+    "IL": 137.2,
+    "WI": 115.3,
+    "MN": 76.3,
+    "IN": 124.1,
+    "MD": 93.7,
+    "VA": 67.4
+  },
+  "interdiction": {
+    "none": 0.0,
+    "greedy": 4.2,
+    "mpc": 10.2,
+    "corr": 4.5,
+    "var-out": 10.1,
+    "spillover": 4.2,
+    "transmitter": 10.4
+  },
+  "symmetrization_advantage": [
+    6.2,
+    -6.2,
+    -8.9,
+    -9.2,
+    -7.6
+  ],
+  "transmitter_not_loudest": true,
+  "arro_over_greedy_x": 2.46,
+  "verdict": "CONFIRMED (loudest != transmitter): the smoke transmitter is WI while the loudest state is MI; transmitter-targeting beats greedy x2.5, directed beats undirected, and the edge collapses under symmetrization -- a confirmatory win on a new domain class (environmental disaster)."
+}

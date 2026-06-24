@@ -1,0 +1,129 @@
+{
+  "ridge": 0.05,
+  "n_systems": 7,
+  "systems": {
+    "asia97": {
+      "N": 9,
+      "nu_H": 0.4772,
+      "asym": 0.6749,
+      "react_gap": 0.2241,
+      "rho": 0.9865,
+      "fro": 2.5016,
+      "connectedness": 54.1,
+      "advantage": 7.3,
+      "verdict": "confirm",
+      "advantage_source": "transfer_results.json (transmitter-greedy)"
+    },
+    "smoke": {
+      "N": 17,
+      "nu_H": 0.8017,
+      "asym": 1.1412,
+      "react_gap": 0.1224,
+      "rho": 1.2795,
+      "fro": 4.0846,
+      "connectedness": 82.4,
+      "advantage": 6.2,
+      "verdict": "confirm",
+      "advantage_source": "transfer_results.json (transmitter-greedy)"
+    },
+    "flu": {
+      "N": 14,
+      "nu_H": 0.2293,
+      "asym": 0.3253,
+      "react_gap": 0.103,
+      "rho": 0.9487,
+      "fro": 2.4786,
+      "connectedness": 77.9,
+      "advantage": 9.9,
+      "verdict": "refine",
+      "advantage_source": "transfer_results.json (transmitter-greedy)"
+    },
+    "flights": {
+      "N": 18,
+      "nu_H": 0.7912,
+      "asym": 1.1339,
+      "react_gap": 0.372,
+      "rho": 0.829,
+      "fro": 2.5166,
+      "connectedness": 77.0,
+      "advantage": 3.9,
+      "verdict": "falsify",
+      "advantage_source": "transfer_results.json (transmitter-greedy)"
+    },
+    "conflict": {
+      "N": 6,
+      "nu_H": 0.485,
+      "asym": 0.686,
+      "react_gap": 0.0144,
+      "rho": 0.8826,
+      "fro": 1.4285,
+      "connectedness": 20.6,
+      "advantage": 1.2,
+      "verdict": "null",
+      "advantage_source": "transfer_results.json (transmitter-greedy)"
+    },
+    "equity": {
+      "N": 8,
+      "nu_H": 0.8217,
+      "asym": 1.1621,
+      "react_gap": 0.0407,
+      "rho": 0.9729,
+      "fro": 2.7578,
+      "connectedness": 80.9,
+      "advantage": 48.57,
+      "verdict": "symmetric",
+      "advantage_source": "recomputed interdict transmitter(41.8) - greedy(-6.8)"
+    },
+    "COVID": {
+      "N": 14,
+      "nu_H": 0.9376,
+      "asym": 1.326,
+      "react_gap": 1.7103,
+      "rho": 0.8833,
+      "fro": 4.7087,
+      "connectedness": 89.8,
+      "advantage": 31.7,
+      "verdict": "confirm",
+      "advantage_source": "validity_decomposition static-transmit(31.9) - greedy(0.2)"
+    }
+  },
+  "correlations": {
+    "nu_H_vs_advantage": {
+      "pearson_r": 0.4961,
+      "pearson_p": 0.2575,
+      "spearman_rho": 0.3929,
+      "spearman_p": 0.3833
+    },
+    "asym_vs_advantage": {
+      "pearson_r": 0.4871,
+      "pearson_p": 0.2676,
+      "spearman_rho": 0.3929,
+      "spearman_p": 0.3833
+    },
+    "connectedness_vs_advantage": {
+      "pearson_r": 0.5008,
+      "pearson_p": 0.2523,
+      "spearman_rho": 0.6429,
+      "spearman_p": 0.1194
+    },
+    "nu_H_vs_advantage_excl_covid": {
+      "pearson_r": 0.3721,
+      "spearman_rho": 0.0857,
+      "n": 6
+    }
+  },
+  "smoke_vs_equity": {
+    "smoke": {
+      "conn": 82.4,
+      "nu_H": 0.8017,
+      "asym": 1.1412,
+      "advantage": 6.2
+    },
+    "equity": {
+      "conn": 80.9,
+      "nu_H": 0.8217,
+      "asym": 1.1621,
+      "advantage": 48.57
+    }
+  }
+}

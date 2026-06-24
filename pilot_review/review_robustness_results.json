@@ -1,0 +1,12 @@
+{
+  "robustness_grid_coastal_frac": 1.0,
+  "symmetrization_advantage": {
+    "a=1.0": 14.8,
+    "a=0.66": 6.4,
+    "a=0.33": -3.2,
+    "a=0.0": -5.0
+  },
+  "placebo_real_drop": 0.25,
+  "placebo_pvalue": 0.114,
+  "placebo_percentile": 89.0
+}

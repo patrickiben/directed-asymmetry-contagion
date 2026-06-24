@@ -1,0 +1,79 @@
+{
+  "countries": [
+    "Mali",
+    "Burkina Faso",
+    "Niger",
+    "Nigeria",
+    "Chad",
+    "Cameroon"
+  ],
+  "n_months": 144,
+  "dy_total": 20.6,
+  "transmitter": "Niger",
+  "loudest": "Nigeria",
+  "top_transmitters": [
+    "Niger",
+    "Burkina Faso",
+    "Cameroon"
+  ],
+  "top_receivers": [
+    "Chad",
+    "Mali",
+    "Nigeria"
+  ],
+  "NET": {
+    "Mali": -7.11,
+    "Burkina Faso": 11.14,
+    "Niger": 13.56,
+    "Nigeria": -4.84,
+    "Chad": -20.68,
+    "Cameroon": 7.93
+  },
+  "TO": {
+    "Mali": 9.69,
+    "Burkina Faso": 19.05,
+    "Niger": 33.65,
+    "Nigeria": 23.7,
+    "Chad": 3.07,
+    "Cameroon": 34.3
+  },
+  "FROM": {
+    "Mali": 16.8,
+    "Burkina Faso": 7.91,
+    "Niger": 20.08,
+    "Nigeria": 28.54,
+    "Chad": 23.75,
+    "Cameroon": 26.37
+  },
+  "total_fatalities": {
+    "Mali": 13646,
+    "Burkina Faso": 12864,
+    "Niger": 4907,
+    "Nigeria": 51091,
+    "Chad": 2093,
+    "Cameroon": 8017
+  },
+  "interdiction": {
+    "none": 0.0,
+    "greedy": 0.4,
+    "mpc": 2.1,
+    "corr": 1.0,
+    "var-out": 1.1,
+    "spillover": 1.5,
+    "transmitter": 1.6
+  },
+  "symmetrization_advantage": [
+    1.2,
+    0.8,
+    0.3,
+    0.0,
+    -0.1
+  ],
+  "transmitter_not_loudest": true,
+  "transmitter_is_mali": false,
+  "transmitter_in_sahel": true,
+  "directed": false,
+  "dir_beats_undir": true,
+  "arro_over_greedy_x": 4.52,
+  "verdict": "NULL: the regional violence looks like a near-symmetric common shock (DY 21%, symmetrization barely changes the edge), so transmitter-targeting ~ greedy (x4.5) -- the no-leverage case the law predicts."
+}

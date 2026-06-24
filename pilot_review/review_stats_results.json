@@ -1,0 +1,13 @@
+{
+  "rho_pre_mean": 0.969,
+  "rho_pre_ci": [
+    0.878,
+    1.041
+  ],
+  "rho_post_mean": 0.902,
+  "rho_post_ci": [
+    0.815,
+    0.985
+  ],
+  "P_pre_gt_post": 0.884
+}

@@ -1,0 +1,407 @@
+{
+  "horizons": [
+    1,
+    2,
+    4,
+    8,
+    12
+  ],
+  "twins": {
+    "asia97": {
+      "names": [
+        "Thai",
+        "Korea",
+        "Malay",
+        "Singa",
+        "Japan",
+        "Taiwan",
+        "HK",
+        "India",
+        "China"
+      ],
+      "loudest": "Korea",
+      "n_obs": 135,
+      "N": 9,
+      "spectral_radius": 0.9865,
+      "baseline_H10_transmitter": "Thai",
+      "baseline_H10_DY_total": 54.11,
+      "transmitter_by_H": {
+        "1": "Singa",
+        "2": "Thai",
+        "4": "Thai",
+        "8": "Thai",
+        "12": "Thai"
+      },
+      "DY_total_by_H": {
+        "1": 38.27,
+        "2": 40.72,
+        "4": 45.01,
+        "8": 51.64,
+        "12": 56.11
+      },
+      "transmitter_set": [
+        "Singa",
+        "Thai"
+      ],
+      "transmitter_stable_across_H": false,
+      "matches_H10_baseline": false,
+      "locks_to_H10_baseline_from_H": 2,
+      "stable_for_H_ge_2": true,
+      "stable_for_H_ge_4": true
+    },
+    "smoke23": {
+      "names": [
+        "NY",
+        "NJ",
+        "PA",
+        "CT",
+        "MA",
+        "RI",
+        "VT",
+        "NH",
+        "ME",
+        "OH",
+        "MI",
+        "IL",
+        "WI",
+        "MN",
+        "IN",
+        "MD",
+        "VA"
+      ],
+      "loudest": "MI",
+      "n_obs": 92,
+      "N": 17,
+      "spectral_radius": 1.2795,
+      "baseline_H10_transmitter": "WI",
+      "baseline_H10_DY_total": 82.36,
+      "transmitter_by_H": {
+        "1": "CT",
+        "2": "WI",
+        "4": "WI",
+        "8": "WI",
+        "12": "WI"
+      },
+      "DY_total_by_H": {
+        "1": 69.95,
+        "2": 76.88,
+        "4": 79.67,
+        "8": 81.89,
+        "12": 82.67
+      },
+      "transmitter_set": [
+        "CT",
+        "WI"
+      ],
+      "transmitter_stable_across_H": false,
+      "matches_H10_baseline": false,
+      "locks_to_H10_baseline_from_H": 2,
+      "stable_for_H_ge_2": true,
+      "stable_for_H_ge_4": true
+    },
+    "flu": {
+      "names": [
+        "CA",
+        "TX",
+        "NY",
+        "PA",
+        "IL",
+        "OH",
+        "GA",
+        "NC",
+        "MI",
+        "NJ",
+        "VA",
+        "WA",
+        "AZ",
+        "MA"
+      ],
+      "loudest": "TX",
+      "n_obs": 298,
+      "N": 14,
+      "spectral_radius": 0.9487,
+      "baseline_H10_transmitter": "TX",
+      "baseline_H10_DY_total": 77.91,
+      "transmitter_by_H": {
+        "1": "PA",
+        "2": "IL",
+        "4": "TX",
+        "8": "TX",
+        "12": "TX"
+      },
+      "DY_total_by_H": {
+        "1": 55.57,
+        "2": 61.39,
+        "4": 69.0,
+        "8": 76.11,
+        "12": 79.17
+      },
+      "transmitter_set": [
+        "IL",
+        "PA",
+        "TX"
+      ],
+      "transmitter_stable_across_H": false,
+      "matches_H10_baseline": false,
+      "locks_to_H10_baseline_from_H": 4,
+      "stable_for_H_ge_2": false,
+      "stable_for_H_ge_4": true
+    },
+    "flights": {
+      "names": [
+        "ATL",
+        "DFW",
+        "ORD",
+        "LAX",
+        "DEN",
+        "IAH",
+        "PHX",
+        "SFO",
+        "LAS",
+        "CLT",
+        "EWR",
+        "MCO",
+        "MSP",
+        "DTW",
+        "LGA",
+        "SLC",
+        "BOS",
+        "JFK"
+      ],
+      "loudest": "ORD",
+      "n_obs": 90,
+      "N": 18,
+      "spectral_radius": 0.829,
+      "baseline_H10_transmitter": "LAS",
+      "baseline_H10_DY_total": 77.03,
+      "transmitter_by_H": {
+        "1": "PHX",
+        "2": "PHX",
+        "4": "LAS",
+        "8": "LAS",
+        "12": "LAS"
+      },
+      "DY_total_by_H": {
+        "1": 62.74,
+        "2": 69.42,
+        "4": 74.14,
+        "8": 76.67,
+        "12": 77.19
+      },
+      "transmitter_set": [
+        "LAS",
+        "PHX"
+      ],
+      "transmitter_stable_across_H": false,
+      "matches_H10_baseline": false,
+      "locks_to_H10_baseline_from_H": 4,
+      "stable_for_H_ge_2": false,
+      "stable_for_H_ge_4": true
+    },
+    "conflict": {
+      "names": [
+        "Mali",
+        "Burkina Faso",
+        "Niger",
+        "Nigeria",
+        "Chad",
+        "Cameroon"
+      ],
+      "loudest": "Nigeria",
+      "n_obs": 144,
+      "N": 6,
+      "spectral_radius": 0.8826,
+      "baseline_H10_transmitter": "Niger",
+      "baseline_H10_DY_total": 20.57,
+      "transmitter_by_H": {
+        "1": "Cameroon",
+        "2": "Niger",
+        "4": "Niger",
+        "8": "Niger",
+        "12": "Niger"
+      },
+      "DY_total_by_H": {
+        "1": 11.95,
+        "2": 17.02,
+        "4": 19.18,
+        "8": 20.36,
+        "12": 20.7
+      },
+      "transmitter_set": [
+        "Cameroon",
+        "Niger"
+      ],
+      "transmitter_stable_across_H": false,
+      "matches_H10_baseline": false,
+      "locks_to_H10_baseline_from_H": 2,
+      "stable_for_H_ge_2": true,
+      "stable_for_H_ge_4": true
+    }
+  },
+  "n_twins_ok": 5,
+  "n_stable_all_H": 0,
+  "n_match_H10_all_H": 0,
+  "n_stable_H_ge_2": 3,
+  "n_stable_H_ge_4": 5,
+  "unstable_at_some_H": [
+    "asia97",
+    "smoke23",
+    "flu",
+    "flights",
+    "conflict"
+  ],
+  "headline": "The GFEVD net-transmitter identity is HORIZON-STABLE on the forecasting/operational horizons: it matches the published H=10 baseline at EVERY H>=4 in all 5/5 twins (asia97=Thai, smoke23=WI, flu=TX, flights=LAS, conflict=Niger), and at every H>=2 in 3/5 twins. The ONLY instability is at the very shortest horizon H=1 -- where the generalized FEVD reduces to the contemporaneous innovation covariance Sigma (only the impact matrix A0=I enters, so directed propagation through Phi has not yet acted) and the argmax NET reflects covariance rather than directed transmission: all five twins differ at H=1 (asia97 Singa, smoke23 CT, flu PA, flights PHX, conflict Cameroon). flu and flights take one extra step (still off at H=2: IL, PHX) before locking onto TX / LAS from H=4. DY total connectedness rises monotonically with H in every twin (it never changes the WINNER beyond H>=4). Net: the transmitter is NOT stable at H=1 by construction, but is fully stable and baseline-consistent across all multi-step horizons H in {4,8,12} -- the regime DY connectedness is read at.",
+  "note_H1": "At H=1 the Pesaran-Shin GFEVD theta_ij is proportional to Sigma_ij^2/Sigma_jj (pure contemporaneous covariance, no dynamic propagation through Phi), so the H=1 net-transmitter is a covariance artefact, not the directed-contagion transmitter; the directed transmitter emerges and stabilises for H>=2 (H>=4 for flu/flights).",
+  "table": [
+    {
+      "twin": "asia97",
+      "H": 1,
+      "transmitter": "Singa",
+      "DY_total": 38.27
+    },
+    {
+      "twin": "asia97",
+      "H": 2,
+      "transmitter": "Thai",
+      "DY_total": 40.72
+    },
+    {
+      "twin": "asia97",
+      "H": 4,
+      "transmitter": "Thai",
+      "DY_total": 45.01
+    },
+    {
+      "twin": "asia97",
+      "H": 8,
+      "transmitter": "Thai",
+      "DY_total": 51.64
+    },
+    {
+      "twin": "asia97",
+      "H": 12,
+      "transmitter": "Thai",
+      "DY_total": 56.11
+    },
+    {
+      "twin": "smoke23",
+      "H": 1,
+      "transmitter": "CT",
+      "DY_total": 69.95
+    },
+    {
+      "twin": "smoke23",
+      "H": 2,
+      "transmitter": "WI",
+      "DY_total": 76.88
+    },
+    {
+      "twin": "smoke23",
+      "H": 4,
+      "transmitter": "WI",
+      "DY_total": 79.67
+    },
+    {
+      "twin": "smoke23",
+      "H": 8,
+      "transmitter": "WI",
+      "DY_total": 81.89
+    },
+    {
+      "twin": "smoke23",
+      "H": 12,
+      "transmitter": "WI",
+      "DY_total": 82.67
+    },
+    {
+      "twin": "flu",
+      "H": 1,
+      "transmitter": "PA",
+      "DY_total": 55.57
+    },
+    {
+      "twin": "flu",
+      "H": 2,
+      "transmitter": "IL",
+      "DY_total": 61.39
+    },
+    {
+      "twin": "flu",
+      "H": 4,
+      "transmitter": "TX",
+      "DY_total": 69.0
+    },
+    {
+      "twin": "flu",
+      "H": 8,
+      "transmitter": "TX",
+      "DY_total": 76.11
+    },
+    {
+      "twin": "flu",
+      "H": 12,
+      "transmitter": "TX",
+      "DY_total": 79.17
+    },
+    {
+      "twin": "flights",
+      "H": 1,
+      "transmitter": "PHX",
+      "DY_total": 62.74
+    },
+    {
+      "twin": "flights",
+      "H": 2,
+      "transmitter": "PHX",
+      "DY_total": 69.42
+    },
+    {
+      "twin": "flights",
+      "H": 4,
+      "transmitter": "LAS",
+      "DY_total": 74.14
+    },
+    {
+      "twin": "flights",
+      "H": 8,
+      "transmitter": "LAS",
+      "DY_total": 76.67
+    },
+    {
+      "twin": "flights",
+      "H": 12,
+      "transmitter": "LAS",
+      "DY_total": 77.19
+    },
+    {
+      "twin": "conflict",
+      "H": 1,
+      "transmitter": "Cameroon",
+      "DY_total": 11.95
+    },
+    {
+      "twin": "conflict",
+      "H": 2,
+      "transmitter": "Niger",
+      "DY_total": 17.02
+    },
+    {
+      "twin": "conflict",
+      "H": 4,
+      "transmitter": "Niger",
+      "DY_total": 19.18
+    },
+    {
+      "twin": "conflict",
+      "H": 8,
+      "transmitter": "Niger",
+      "DY_total": 20.36
+    },
+    {
+      "twin": "conflict",
+      "H": 12,
+      "transmitter": "Niger",
+      "DY_total": 20.7
+    }
+  ]
+}

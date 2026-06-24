@@ -1,0 +1,16 @@
+{
+  "n_windows": 25,
+  "distinct_top_transmitters": 8,
+  "shift_fraction": 0.72,
+  "mean_rank_similarity": 0.28,
+  "reductions": {
+    "none": 0.0,
+    "greedy": 1.9,
+    "static": 2.7,
+    "adaptive": 8.1,
+    "oracle-window": 10.1
+  },
+  "value_of_tracking_pts": 7.4,
+  "realizable_pts": 5.4,
+  "verdict": "REAL non-stationarity pays: tracking the moving transmitter beats the fixed rule on real data -- supports the anticipatory engine; points to NCS"
+}

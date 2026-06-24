@@ -1,0 +1,25 @@
+{
+  "recovery": {
+    "corr-centrality": -0.1091623363679583,
+    "var-out": 0.7782146481574896,
+    "spillover-IRF": 0.6954424474802746,
+    "dy-net": 0.5183406343928901
+  },
+  "interdiction_synthetic": {
+    "reactive-greedy": 59.6,
+    "corr-centrality": 62.2,
+    "var-out": 88.9,
+    "spillover-IRF": 87.4,
+    "dy-net": 84.6,
+    "mpc-oracle": 97.4
+  },
+  "interdiction_covid": {
+    "reactive-greedy": 0.2,
+    "corr-centrality": 5.4,
+    "var-out": 34.8,
+    "spillover-IRF": 51.4,
+    "dy-net": 65.1,
+    "mpc-oracle": 29.6
+  },
+  "verdict": "Two clean results. (1) DIRECTED influence is decisively better than the loudest-node heuristic and undirected centrality on every twin (COVID: directed methods +35..+65% vs greedy/corr +0..+5%) -- the paper's 'support the transmitter, not the loudest' claim survives comparison to standard tools. (2) Among directed measures, performance is comparable, with Diebold-Yilmaz competitive-to-best (best on the real COVID twin, +65% vs spillover +51% / var-out +35%); the crucial ingredient is DIRECTEDNESS, not the specific estimator."
+}

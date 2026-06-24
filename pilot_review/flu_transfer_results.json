@@ -1,0 +1,47 @@
+{
+  "states": [
+    "CA",
+    "TX",
+    "NY",
+    "PA",
+    "IL",
+    "OH",
+    "GA",
+    "NC",
+    "MI",
+    "NJ",
+    "VA",
+    "WA",
+    "AZ",
+    "MA"
+  ],
+  "n_weeks": 298,
+  "dy_total": 77.9,
+  "transmitter": "TX",
+  "loudest": "TX",
+  "top_transmitters": [
+    "TX",
+    "GA",
+    "IL"
+  ],
+  "net_asymmetry": 43.794,
+  "interdiction": {
+    "none": 0.0,
+    "greedy": 68.0,
+    "mpc": 66.6,
+    "corr": 24.6,
+    "var-out": 70.1,
+    "spillover": 76.5,
+    "transmitter": 77.9
+  },
+  "symmetrization_advantage": [
+    9.8,
+    1.0,
+    -2.7,
+    -7.5,
+    -14.7
+  ],
+  "transmitter_not_loudest": false,
+  "arro_over_greedy_x": 1.15,
+  "verdict": "REFINES the law (honest, predicted partly wrong): the flu network is strongly DIRECTED (DY 78%; the symmetrization null confirms directedness drives the edge, +10->-15 pts), but -- contrary to our pre-registered expectation -- its net-transmitter COINCIDES with its loudest state (Texas). So the loudest-vs-transmitter GAP that produces a large anticipatory advantage is ABSENT, and transmitter-targeting only modestly beats the loudest-node heuristic (x1.1). The operative quantity is the loudest-transmitter gap, not directedness alone; flu (coincident transmitter) and the 2008 equity crash (symmetric factor) are two distinct ways that gap is small, both giving ARRO ~ greedy as the law requires."
+}

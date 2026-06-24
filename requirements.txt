@@ -1,0 +1,6 @@
+# Pinned environment (verified to reproduce the analyses; matches out_of_sample_probe/requirements.txt)
+numpy==2.0.2
+pandas==2.3.3
+scipy==1.13.1
+matplotlib==3.9.4
+autograd==1.8.0

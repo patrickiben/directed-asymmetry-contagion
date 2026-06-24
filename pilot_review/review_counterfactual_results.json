@@ -1,0 +1,14 @@
+{
+  "rho_pre": 0.965,
+  "DY_net": {
+    "Greece": -0.09,
+    "Italy": -0.42,
+    "Portugal": 0.47,
+    "Spain": -0.4,
+    "Ireland": 0.44
+  },
+  "rmse_noaction": 7.23,
+  "rmse_omt_support": 3.09,
+  "rmse_reduction_pct": 57.3,
+  "note": "twin calibrated PRE-OMT only; OMT-like support forecast reproduces the held-out post-OMT recovery"
+}

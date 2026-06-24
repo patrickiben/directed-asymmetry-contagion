@@ -1,0 +1,478 @@
+{
+  "description": "rho-sensitivity of directed-asymmetry (transmitter vs greedy interdiction) across five transfer twins",
+  "rhos": [
+    1.02,
+    1.05,
+    1.08,
+    1.1
+  ],
+  "method": "per-twin reconstruction matches each *_transfer.py exactly; rescale(Phi0,rho)+local interdict",
+  "twins": {
+    "asia97": {
+      "label": "1997 Asian FX",
+      "verdict_class": "CONFIRM",
+      "names": [
+        "Thai",
+        "Korea",
+        "Malay",
+        "Singa",
+        "Japan",
+        "Taiwan",
+        "HK",
+        "India",
+        "China"
+      ],
+      "transmitter_node": "Thai",
+      "loudest_node": "Korea",
+      "dy_total_pct": 54.1,
+      "fitted_rho_Phi0": 0.9865,
+      "sweep": [
+        {
+          "rho": 1.02,
+          "transmitter_pct": 14.14,
+          "greedy_pct": 7.1,
+          "ratio": 1.99
+        },
+        {
+          "rho": 1.05,
+          "transmitter_pct": 13.35,
+          "greedy_pct": 6.04,
+          "ratio": 2.21
+        },
+        {
+          "rho": 1.08,
+          "transmitter_pct": 12.58,
+          "greedy_pct": 4.71,
+          "ratio": 2.67
+        },
+        {
+          "rho": 1.1,
+          "transmitter_pct": 12.09,
+          "greedy_pct": 4.33,
+          "ratio": 2.79
+        }
+      ]
+    },
+    "smoke23": {
+      "label": "2023 wildfire smoke",
+      "verdict_class": "CONFIRM",
+      "names": [
+        "NY",
+        "NJ",
+        "PA",
+        "CT",
+        "MA",
+        "RI",
+        "VT",
+        "NH",
+        "ME",
+        "OH",
+        "MI",
+        "IL",
+        "WI",
+        "MN",
+        "IN",
+        "MD",
+        "VA"
+      ],
+      "transmitter_node": "WI",
+      "loudest_node": "MI",
+      "dy_total_pct": 82.4,
+      "fitted_rho_Phi0": 1.2795,
+      "sweep": [
+        {
+          "rho": 1.02,
+          "transmitter_pct": 10.27,
+          "greedy_pct": 4.66,
+          "ratio": 2.2
+        },
+        {
+          "rho": 1.05,
+          "transmitter_pct": 10.36,
+          "greedy_pct": 4.28,
+          "ratio": 2.42
+        },
+        {
+          "rho": 1.08,
+          "transmitter_pct": 10.42,
+          "greedy_pct": 3.82,
+          "ratio": 2.73
+        },
+        {
+          "rho": 1.1,
+          "transmitter_pct": 10.46,
+          "greedy_pct": 3.55,
+          "ratio": 2.94
+        }
+      ]
+    },
+    "flu": {
+      "label": "US influenza",
+      "verdict_class": "REFINE",
+      "names": [
+        "CA",
+        "TX",
+        "NY",
+        "PA",
+        "IL",
+        "OH",
+        "GA",
+        "NC",
+        "MI",
+        "NJ",
+        "VA",
+        "WA",
+        "AZ",
+        "MA"
+      ],
+      "transmitter_node": "TX",
+      "loudest_node": "TX",
+      "dy_total_pct": 77.9,
+      "fitted_rho_Phi0": 0.9487,
+      "sweep": [
+        {
+          "rho": 1.02,
+          "transmitter_pct": 75.18,
+          "greedy_pct": 68.68,
+          "ratio": 1.09
+        },
+        {
+          "rho": 1.05,
+          "transmitter_pct": 77.3,
+          "greedy_pct": 68.49,
+          "ratio": 1.13
+        },
+        {
+          "rho": 1.08,
+          "transmitter_pct": 79.04,
+          "greedy_pct": 67.52,
+          "ratio": 1.17
+        },
+        {
+          "rho": 1.1,
+          "transmitter_pct": 79.94,
+          "greedy_pct": 66.92,
+          "ratio": 1.19
+        }
+      ]
+    },
+    "flights": {
+      "label": "2013-14 flight delays",
+      "verdict_class": "FALSIFY",
+      "names": [
+        "ATL",
+        "DFW",
+        "ORD",
+        "LAX",
+        "DEN",
+        "IAH",
+        "PHX",
+        "SFO",
+        "LAS",
+        "CLT",
+        "EWR",
+        "MCO",
+        "MSP",
+        "DTW",
+        "LGA",
+        "SLC",
+        "BOS",
+        "JFK"
+      ],
+      "transmitter_node": "LAS",
+      "loudest_node": "ORD",
+      "dy_total_pct": 77.0,
+      "fitted_rho_Phi0": 0.829,
+      "sweep": [
+        {
+          "rho": 1.02,
+          "transmitter_pct": 5.29,
+          "greedy_pct": 1.71,
+          "ratio": 3.09
+        },
+        {
+          "rho": 1.05,
+          "transmitter_pct": 5.18,
+          "greedy_pct": 1.23,
+          "ratio": 4.23
+        },
+        {
+          "rho": 1.08,
+          "transmitter_pct": 5.06,
+          "greedy_pct": 1.21,
+          "ratio": 4.17
+        },
+        {
+          "rho": 1.1,
+          "transmitter_pct": 4.98,
+          "greedy_pct": 1.21,
+          "ratio": 4.11
+        }
+      ]
+    },
+    "conflict": {
+      "label": "Sahel conflict",
+      "verdict_class": "NULL",
+      "names": [
+        "Mali",
+        "Burkina Faso",
+        "Niger",
+        "Nigeria",
+        "Chad",
+        "Cameroon"
+      ],
+      "transmitter_node": "Niger",
+      "loudest_node": "Nigeria",
+      "dy_total_pct": 20.6,
+      "fitted_rho_Phi0": 0.8826,
+      "sweep": [
+        {
+          "rho": 1.02,
+          "transmitter_pct": 1.5,
+          "greedy_pct": 0.37,
+          "ratio": 4.01
+        },
+        {
+          "rho": 1.05,
+          "transmitter_pct": 1.57,
+          "greedy_pct": 0.36,
+          "ratio": 4.38
+        },
+        {
+          "rho": 1.08,
+          "transmitter_pct": 1.63,
+          "greedy_pct": 0.35,
+          "ratio": 4.73
+        },
+        {
+          "rho": 1.1,
+          "transmitter_pct": 1.68,
+          "greedy_pct": 0.35,
+          "ratio": 4.83
+        }
+      ]
+    }
+  },
+  "table": [
+    {
+      "twin": "asia97",
+      "label": "1997 Asian FX",
+      "verdict_class": "CONFIRM",
+      "rho": 1.02,
+      "transmitter_pct": 14.14,
+      "greedy_pct": 7.1,
+      "ratio": 1.99,
+      "transmitter_node": "Thai",
+      "loudest_node": "Korea"
+    },
+    {
+      "twin": "asia97",
+      "label": "1997 Asian FX",
+      "verdict_class": "CONFIRM",
+      "rho": 1.05,
+      "transmitter_pct": 13.35,
+      "greedy_pct": 6.04,
+      "ratio": 2.21,
+      "transmitter_node": "Thai",
+      "loudest_node": "Korea"
+    },
+    {
+      "twin": "asia97",
+      "label": "1997 Asian FX",
+      "verdict_class": "CONFIRM",
+      "rho": 1.08,
+      "transmitter_pct": 12.58,
+      "greedy_pct": 4.71,
+      "ratio": 2.67,
+      "transmitter_node": "Thai",
+      "loudest_node": "Korea"
+    },
+    {
+      "twin": "asia97",
+      "label": "1997 Asian FX",
+      "verdict_class": "CONFIRM",
+      "rho": 1.1,
+      "transmitter_pct": 12.09,
+      "greedy_pct": 4.33,
+      "ratio": 2.79,
+      "transmitter_node": "Thai",
+      "loudest_node": "Korea"
+    },
+    {
+      "twin": "smoke23",
+      "label": "2023 wildfire smoke",
+      "verdict_class": "CONFIRM",
+      "rho": 1.02,
+      "transmitter_pct": 10.27,
+      "greedy_pct": 4.66,
+      "ratio": 2.2,
+      "transmitter_node": "WI",
+      "loudest_node": "MI"
+    },
+    {
+      "twin": "smoke23",
+      "label": "2023 wildfire smoke",
+      "verdict_class": "CONFIRM",
+      "rho": 1.05,
+      "transmitter_pct": 10.36,
+      "greedy_pct": 4.28,
+      "ratio": 2.42,
+      "transmitter_node": "WI",
+      "loudest_node": "MI"
+    },
+    {
+      "twin": "smoke23",
+      "label": "2023 wildfire smoke",
+      "verdict_class": "CONFIRM",
+      "rho": 1.08,
+      "transmitter_pct": 10.42,
+      "greedy_pct": 3.82,
+      "ratio": 2.73,
+      "transmitter_node": "WI",
+      "loudest_node": "MI"
+    },
+    {
+      "twin": "smoke23",
+      "label": "2023 wildfire smoke",
+      "verdict_class": "CONFIRM",
+      "rho": 1.1,
+      "transmitter_pct": 10.46,
+      "greedy_pct": 3.55,
+      "ratio": 2.94,
+      "transmitter_node": "WI",
+      "loudest_node": "MI"
+    },
+    {
+      "twin": "flu",
+      "label": "US influenza",
+      "verdict_class": "REFINE",
+      "rho": 1.02,
+      "transmitter_pct": 75.18,
+      "greedy_pct": 68.68,
+      "ratio": 1.09,
+      "transmitter_node": "TX",
+      "loudest_node": "TX"
+    },
+    {
+      "twin": "flu",
+      "label": "US influenza",
+      "verdict_class": "REFINE",
+      "rho": 1.05,
+      "transmitter_pct": 77.3,
+      "greedy_pct": 68.49,
+      "ratio": 1.13,
+      "transmitter_node": "TX",
+      "loudest_node": "TX"
+    },
+    {
+      "twin": "flu",
+      "label": "US influenza",
+      "verdict_class": "REFINE",
+      "rho": 1.08,
+      "transmitter_pct": 79.04,
+      "greedy_pct": 67.52,
+      "ratio": 1.17,
+      "transmitter_node": "TX",
+      "loudest_node": "TX"
+    },
+    {
+      "twin": "flu",
+      "label": "US influenza",
+      "verdict_class": "REFINE",
+      "rho": 1.1,
+      "transmitter_pct": 79.94,
+      "greedy_pct": 66.92,
+      "ratio": 1.19,
+      "transmitter_node": "TX",
+      "loudest_node": "TX"
+    },
+    {
+      "twin": "flights",
+      "label": "2013-14 flight delays",
+      "verdict_class": "FALSIFY",
+      "rho": 1.02,
+      "transmitter_pct": 5.29,
+      "greedy_pct": 1.71,
+      "ratio": 3.09,
+      "transmitter_node": "LAS",
+      "loudest_node": "ORD"
+    },
+    {
+      "twin": "flights",
+      "label": "2013-14 flight delays",
+      "verdict_class": "FALSIFY",
+      "rho": 1.05,
+      "transmitter_pct": 5.18,
+      "greedy_pct": 1.23,
+      "ratio": 4.23,
+      "transmitter_node": "LAS",
+      "loudest_node": "ORD"
+    },
+    {
+      "twin": "flights",
+      "label": "2013-14 flight delays",
+      "verdict_class": "FALSIFY",
+      "rho": 1.08,
+      "transmitter_pct": 5.06,
+      "greedy_pct": 1.21,
+      "ratio": 4.17,
+      "transmitter_node": "LAS",
+      "loudest_node": "ORD"
+    },
+    {
+      "twin": "flights",
+      "label": "2013-14 flight delays",
+      "verdict_class": "FALSIFY",
+      "rho": 1.1,
+      "transmitter_pct": 4.98,
+      "greedy_pct": 1.21,
+      "ratio": 4.11,
+      "transmitter_node": "LAS",
+      "loudest_node": "ORD"
+    },
+    {
+      "twin": "conflict",
+      "label": "Sahel conflict",
+      "verdict_class": "NULL",
+      "rho": 1.02,
+      "transmitter_pct": 1.5,
+      "greedy_pct": 0.37,
+      "ratio": 4.01,
+      "transmitter_node": "Niger",
+      "loudest_node": "Nigeria"
+    },
+    {
+      "twin": "conflict",
+      "label": "Sahel conflict",
+      "verdict_class": "NULL",
+      "rho": 1.05,
+      "transmitter_pct": 1.57,
+      "greedy_pct": 0.36,
+      "ratio": 4.38,
+      "transmitter_node": "Niger",
+      "loudest_node": "Nigeria"
+    },
+    {
+      "twin": "conflict",
+      "label": "Sahel conflict",
+      "verdict_class": "NULL",
+      "rho": 1.08,
+      "transmitter_pct": 1.63,
+      "greedy_pct": 0.35,
+      "ratio": 4.73,
+      "transmitter_node": "Niger",
+      "loudest_node": "Nigeria"
+    },
+    {
+      "twin": "conflict",
+      "label": "Sahel conflict",
+      "verdict_class": "NULL",
+      "rho": 1.1,
+      "transmitter_pct": 1.68,
+      "greedy_pct": 0.35,
+      "ratio": 4.83,
+      "transmitter_node": "Niger",
+      "loudest_node": "Nigeria"
+    }
+  ]
+}

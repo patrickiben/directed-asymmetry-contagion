@@ -1,0 +1,29 @@
+{
+  "pred_rmse_tipping": {
+    "linear": 12.14,
+    "learned": 2.4
+  },
+  "interdiction": {
+    "none": {
+      "mean": 6590.0,
+      "sd": 270.0,
+      "pct": 0.0
+    },
+    "linear-MPC": {
+      "mean": 381.1,
+      "sd": 7.3,
+      "pct": 94.2
+    },
+    "learned-MPC": {
+      "mean": 262.5,
+      "sd": 7.1,
+      "pct": 96.0
+    },
+    "true-oracle": {
+      "mean": 202.4,
+      "sd": 5.0,
+      "pct": 96.9
+    }
+  },
+  "learned_beats_linear_pct": 31.1
+}

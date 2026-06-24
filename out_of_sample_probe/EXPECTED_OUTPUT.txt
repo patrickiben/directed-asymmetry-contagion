@@ -1,0 +1,14 @@
+network             transmitter          loudest  stable  OOS lead   SI
+--------------------------------------------------------------------------------
+2008 equities      US (S&P 500) Hong Kong (Hang Seng)  stable    +7.98%   (SI +8%)
+US housing          Los Angeles        Las Vegas  UNSTBL   -32.40%   (SI +10%)
+EM-FX                    Turkey        Argentina  stable    +5.00%   (SI +5%)
+--------------------------------------------------------------------------------
+
+Corrected stationary-transmitter arm = ['2008 equities', 'EM-FX', 'wildfire smoke']
+  leads = [8.0, 5.0, -3.0]  (smoke -3% carried over, not re-derived here)
+  mean = +3.33%   |  2/3 positive, one-sided sign test p = 0.500
+  -> suggestive, NOT significant (matches the corrected SI: mean +3.3%, p=0.50)
+
+Housing is UNSTABLE (train transmitter != full-sample): its net-transmitter migrates between
+bubble and recovery, so by the stability criterion it belongs in the non-stationary arm (lead absent).
