@@ -185,23 +185,24 @@ json.dump(RES, open(BASE / "validity_benchmark_results.json", "w"), indent=2)
 # ----------------------------------------------------------------------------- figure
 fig, ax = plt.subplots(1, 3, figsize=(12.0, 4.0))
 order = [m[0] for m in METHODS if m[1] is not None]; cols = {m[0]: m[2] for m in METHODS}
+DISP = {"reactive-greedy": "Reactive-Greedy", "corr-centrality": "Corr-Centrality", "var-out": "Var-Out", "spillover-IRF": "Spillover-IRF", "dy-net": "DY-Net", "mpc-oracle": "MPC-Oracle"}
 # (a) recovery
 a = ax[0]; vals = [rec_mean[k] for k in order]
 a.barh(range(len(order)), vals, color=[cols[k] for k in order], alpha=.85)
-for i, v in enumerate(vals): a.text(v + (.02 if v >= 0 else -.02), i, f"{v:+.2f}", va="center", ha="left" if v >= 0 else "right", fontsize=7.5)
-a.set_yticks(range(len(order))); a.set_yticklabels(order); a.invert_yaxis(); a.axvline(0, color="k", lw=.7)
-a.set_xlabel("Spearman ρ vs true transmitter"); a.set_title("(a) Recovery on synthetic twins\n(ground truth known)", fontsize=8.3)
+for i, v in enumerate(vals): a.text((v + .02) if v >= 0 else 0.02, i, f"{v:+.2f}", va="center", ha="left", fontsize=7.5)
+a.set_yticks(range(len(order))); a.set_yticklabels([DISP[k] for k in order]); a.invert_yaxis(); a.axvline(0, color="k", lw=.7)
+a.set_xlabel("Spearman ρ vs True Transmitter"); a.set_title("(a) Recovery on Synthetic Twins\n(Ground Truth Known)", fontsize=8.3)
 a.set_xlim(-0.2, 1.05); a.grid(alpha=.25, axis="x")
 # (b,c) interdiction
-for a, (red, tag) in zip(ax[1:], [(redS, "(b) Interdiction — synthetic twin"), (redC, "(c) Interdiction — real COVID twin")]):
+for a, (red, tag) in zip(ax[1:], [(redS, "(b) Interdiction — Synthetic Twin"), (redC, "(c) Interdiction — Real COVID Twin")]):
     keys = ["reactive-greedy"] + order + ["mpc-oracle"]; vv = [red[k] for k in keys]
     cc = [cols[k] for k in keys[:-1]] + [GOLD]
     a.bar(range(len(keys)), vv, color=cc, alpha=.85)
     for i, v in enumerate(vv): a.text(i, v + 1.5, f"{v:+.0f}%", ha="center", fontsize=7, fontweight="bold")
-    a.set_xticks(range(len(keys))); a.set_xticklabels([k.replace("-", "\n") for k in keys], fontsize=6.3)
-    a.set_ylabel("cascade reduction vs no-action (%)"); a.set_title(tag, fontsize=8.3); a.grid(alpha=.25, axis="y")
+    a.set_xticks(range(len(keys))); a.set_xticklabels([DISP[k].replace("-", "\n") for k in keys], fontsize=6.3)
+    a.set_ylabel("Cascade Reduction vs No-Action (%)"); a.set_title(tag, fontsize=8.3); a.grid(alpha=.25, axis="y")
     a.set_ylim(min(0, min(vv) - 3), max(vv) * 1.18)
-fig.suptitle("Benchmark vs standard tools — the lesson is DIRECTED influence (any of several measures), not Diebold–Yılmaz specifically",
+fig.suptitle("Benchmark Against Standard Tools: Directed Influence Decides, Not the Specific Estimator",
              fontsize=9.5, fontweight="bold", y=1.03)
 fig.tight_layout()
 fig.savefig(BASE / "validity_benchmark.pdf", bbox_inches="tight"); fig.savefig(BASE / "validity_benchmark.png", dpi=200, bbox_inches="tight")

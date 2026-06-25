@@ -54,7 +54,7 @@
       ]
     },
     "smoke23": {
-      "label": "2023 wildfire smoke",
+      "label": "2023 Wildfire Smoke",
       "verdict_class": "CONFIRM",
       "names": [
         "NY",
@@ -107,7 +107,7 @@
       ]
     },
     "flu": {
-      "label": "US influenza",
+      "label": "US Influenza",
       "verdict_class": "REFINE",
       "names": [
         "CA",
@@ -157,7 +157,7 @@
       ]
     },
     "flights": {
-      "label": "2013-14 flight delays",
+      "label": "2013-14 Flight Delays",
       "verdict_class": "FALSIFY",
       "names": [
         "ATL",
@@ -211,7 +211,7 @@
       ]
     },
     "conflict": {
-      "label": "Sahel conflict",
+      "label": "Sahel Conflict",
       "verdict_class": "NULL",
       "names": [
         "Mali",
@@ -300,7 +300,7 @@
     },
     {
       "twin": "smoke23",
-      "label": "2023 wildfire smoke",
+      "label": "2023 Wildfire Smoke",
       "verdict_class": "CONFIRM",
       "rho": 1.02,
       "transmitter_pct": 10.27,
@@ -311,7 +311,7 @@
     },
     {
       "twin": "smoke23",
-      "label": "2023 wildfire smoke",
+      "label": "2023 Wildfire Smoke",
       "verdict_class": "CONFIRM",
       "rho": 1.05,
       "transmitter_pct": 10.36,
@@ -322,7 +322,7 @@
     },
     {
       "twin": "smoke23",
-      "label": "2023 wildfire smoke",
+      "label": "2023 Wildfire Smoke",
       "verdict_class": "CONFIRM",
       "rho": 1.08,
       "transmitter_pct": 10.42,
@@ -333,7 +333,7 @@
     },
     {
       "twin": "smoke23",
-      "label": "2023 wildfire smoke",
+      "label": "2023 Wildfire Smoke",
       "verdict_class": "CONFIRM",
       "rho": 1.1,
       "transmitter_pct": 10.46,
@@ -344,7 +344,7 @@
     },
     {
       "twin": "flu",
-      "label": "US influenza",
+      "label": "US Influenza",
       "verdict_class": "REFINE",
       "rho": 1.02,
       "transmitter_pct": 75.18,
@@ -355,7 +355,7 @@
     },
     {
       "twin": "flu",
-      "label": "US influenza",
+      "label": "US Influenza",
       "verdict_class": "REFINE",
       "rho": 1.05,
       "transmitter_pct": 77.3,
@@ -366,7 +366,7 @@
     },
     {
       "twin": "flu",
-      "label": "US influenza",
+      "label": "US Influenza",
       "verdict_class": "REFINE",
       "rho": 1.08,
       "transmitter_pct": 79.04,
@@ -377,7 +377,7 @@
     },
     {
       "twin": "flu",
-      "label": "US influenza",
+      "label": "US Influenza",
       "verdict_class": "REFINE",
       "rho": 1.1,
       "transmitter_pct": 79.94,
@@ -388,7 +388,7 @@
     },
     {
       "twin": "flights",
-      "label": "2013-14 flight delays",
+      "label": "2013-14 Flight Delays",
       "verdict_class": "FALSIFY",
       "rho": 1.02,
       "transmitter_pct": 5.29,
@@ -399,7 +399,7 @@
     },
     {
       "twin": "flights",
-      "label": "2013-14 flight delays",
+      "label": "2013-14 Flight Delays",
       "verdict_class": "FALSIFY",
       "rho": 1.05,
       "transmitter_pct": 5.18,
@@ -410,7 +410,7 @@
     },
     {
       "twin": "flights",
-      "label": "2013-14 flight delays",
+      "label": "2013-14 Flight Delays",
       "verdict_class": "FALSIFY",
       "rho": 1.08,
       "transmitter_pct": 5.06,
@@ -421,7 +421,7 @@
     },
     {
       "twin": "flights",
-      "label": "2013-14 flight delays",
+      "label": "2013-14 Flight Delays",
       "verdict_class": "FALSIFY",
       "rho": 1.1,
       "transmitter_pct": 4.98,
@@ -432,7 +432,7 @@
     },
     {
       "twin": "conflict",
-      "label": "Sahel conflict",
+      "label": "Sahel Conflict",
       "verdict_class": "NULL",
       "rho": 1.02,
       "transmitter_pct": 1.5,
@@ -443,7 +443,7 @@
     },
     {
       "twin": "conflict",
-      "label": "Sahel conflict",
+      "label": "Sahel Conflict",
       "verdict_class": "NULL",
       "rho": 1.05,
       "transmitter_pct": 1.57,
@@ -454,7 +454,7 @@
     },
     {
       "twin": "conflict",
-      "label": "Sahel conflict",
+      "label": "Sahel Conflict",
       "verdict_class": "NULL",
       "rho": 1.08,
       "transmitter_pct": 1.63,
@@ -465,7 +465,7 @@
     },
     {
       "twin": "conflict",
-      "label": "Sahel conflict",
+      "label": "Sahel Conflict",
       "verdict_class": "NULL",
       "rho": 1.1,
       "transmitter_pct": 1.68,

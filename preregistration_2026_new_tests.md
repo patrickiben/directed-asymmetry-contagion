@@ -12,7 +12,7 @@ episode and the directed-asymmetry regularity — they are genuine forecasts and
 manuscript already reports two falsifications).
 
 **How to register (5 minutes).** osf.io → New Project → upload this file → *Registrations* → "Register" with the
-"OSF Preregistration" template (or "Open-Ended Registration"). Cite the resulting `osf.io/XXXX` URL in the manuscript's
+"OSF Preregistration" template (or "Open-Ended Registration"). Cite the resulting `osf.io/49kn7` URL in the manuscript's
 prediction-first paragraph and in the Data/Code-availability statement. **Then** run each test with the frozen pipeline
 below and add the confirm/refine/falsify outcome to the ledger.
 

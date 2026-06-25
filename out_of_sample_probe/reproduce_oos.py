@@ -112,7 +112,7 @@ def net_flu():        # CDC ILINet via Delphi Epidata (live)
     return M[av].interpolate().dropna().values, list(M[av].columns)
 
 OFFLINE = "--offline" in sys.argv
-NETS = [("2008 equities", net_equities, "+8%"), ("US housing", net_housing, "+10%"), ("EM-FX", net_emfx, "+5%")]
+NETS = [("2008 equities", net_equities, "+8%"), ("US housing", net_housing, "absent"), ("EM-FX", net_emfx, "+5%")]
 if not OFFLINE: NETS.append(("influenza", net_flu, "absent"))
 
 print(f"{'network':16s} {'transmitter':>14s} {'loudest':>16s} {'stable':>7s} {'OOS lead':>9s}   SI")

@@ -149,23 +149,23 @@ json.dump({"synthetic": sumS, "covid": sumC, "verdict": verdict}, open(BASE / "v
 
 # ----------------------------------------------------------------------------- figure
 fig, ax = plt.subplots(1, 2, figsize=(10.6, 4.2))
-for a, (res, tag) in zip(ax, [(resS, "Synthetic directed twin (one hub, ρ=1.06)"),
-                              (resC, "Real COVID-19 state twin (14 states)")]):
+for a, (res, tag) in zip(ax, [(resS, "Synthetic Directed Twin (One Hub, ρ=1.06)"),
+                              (resC, "Real COVID-19 State Twin (14 States)")]):
     base = res["none"][0]; names = [c[0] for c in CTRLS]; cols = [c[2] for c in CTRLS]
     red = [100 * (1 - res[n][0] / base) for n in names]
     sd = [100 * res[n][1] / base for n in names]
     a.bar(range(len(names)), red, yerr=sd, color=cols, alpha=.85, capsize=3)
-    for i, r in enumerate(red): a.text(i, r + 2, f"{r:+.0f}%", ha="center", fontsize=8, fontweight="bold")
+    for i, (r, s) in enumerate(zip(red, sd)): a.text(i, r + s + max(red) * 0.04, f"{r:+.0f}%", ha="center", fontsize=8, fontweight="bold")
     gst = 100 * (1 - res["static-transmit"][0] / base); gmpc = 100 * (1 - res["mpc-oracle"][0] / base)
     cap = 100 * gst / gmpc if gmpc > 1e-6 else 0
     a.axhline(gmpc, color=STEEL, ls="--", lw=.8, alpha=.6)
-    a.set_xticks(range(len(names))); a.set_xticklabels(["none", "greedy\n(loudest)", "static\ntransmitter", "MPC\n(anticipate)"])
-    a.set_ylabel("cascade reduction vs no-action (%)"); a.set_title(tag, fontsize=8.5)
-    a.text(0.5, 0.93, f"static insight captures {cap:.0f}% of the\nanticipatory planner's gain",
+    a.set_xticks(range(len(names))); a.set_xticklabels(["None", "Greedy\n(Loudest)", "Static\nTransmitter", "MPC\n(Anticipate)"])
+    a.set_ylabel("Cascade Reduction vs No-Action (%)"); a.set_title(tag, fontsize=8.5)
+    a.text(0.5, 0.965, f"Static Insight Captures {cap:.0f}% of the\nAnticipatory Planner's Gain",
            transform=a.transAxes, ha="center", va="top", fontsize=7.5,
            bbox=dict(boxstyle="round,pad=0.3", fc="#fffbe9", ec=GOLD, lw=.8))
-    a.grid(alpha=.25, axis="y"); a.set_ylim(0, max(red) * 1.25)
-fig.suptitle("Validity pressure-test — is it the INSIGHT (target the transmitter) or the MACHINERY (anticipation)?",
+    a.grid(alpha=.25, axis="y"); a.set_ylim(0, max(red) * 1.42)
+fig.suptitle("Insight or Machinery: Static Directed Targeting Captures Most of the Anticipatory Gain",
              fontsize=10, fontweight="bold", y=1.02)
 fig.tight_layout()
 fig.savefig(BASE / "validity_decomposition.pdf", bbox_inches="tight")

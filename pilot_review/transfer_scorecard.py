@@ -15,11 +15,11 @@ def load(f): return json.load(open(f"{R}/{f}"))
 
 # (label, class, file, verdict)  -- ordered by domain class
 rows = [
-    ("Asian FX crisis\n1997, 9 currencies",      "financial",      "asia97_transfer_results.json",   "CONFIRM"),
-    ("Wildfire smoke\n2023, 17 states",          "environmental",  "smoke23_transfer_results.json",  "CONFIRM"),
-    ("Influenza\n2010-19, 14 states",            "epidemic",       "flu_transfer_results.json",      "REFINE"),
-    ("Flight delays\n2013-14, 18 airports",      "infrastructure", "flights_transfer_results.json",  "FALSIFY"),
-    ("Armed conflict\n2012-23, 6 states",        "geopolitical",   "conflict_transfer_results.json", "NULL"),
+    ("Asian FX Crisis\n1997, 9 Currencies",      "financial",      "asia97_transfer_results.json",   "CONFIRM"),
+    ("Wildfire Smoke\n2023, 17 States",          "environmental",  "smoke23_transfer_results.json",  "CONFIRM"),
+    ("Influenza\n2010-19, 14 States",            "epidemic",       "flu_transfer_results.json",      "REFINE"),
+    ("Flight Delays\n2013-14, 18 Airports",      "infrastructure", "flights_transfer_results.json",  "FALSIFY"),
+    ("Armed Conflict\n2012-23, 6 States",        "geopolitical",   "conflict_transfer_results.json", "NULL"),
 ]
 COL = {"CONFIRM": "#2C7A2C", "REFINE": "#D9A521", "FALSIFY": "#B23A3A", "NULL": "#B23A3A"}
 
@@ -41,14 +41,14 @@ for yi, d in zip(y, data):
     axA.barh(yi, d["dy"], color="#5B7DB1", height=0.55, zorder=3)
     axA.text(d["dy"] + 1.5, yi, f"{d['dy']:.0f}%", va="center", ha="left", fontsize=9, zorder=4)
 axA.axvspan(75, 84, color="0.85", zorder=0)  # the high-connectedness cluster band
-axA.text(79.5, n - 0.35, "smoke, flu, flights\ncluster here", fontsize=7.0, ha="center", va="bottom", color="0.35")
+axA.text(79.5, n - 0.35, "Smoke, Flu, Flights\nCluster Here", fontsize=7.0, ha="center", va="bottom", color="0.35")
 axA.set_xlim(0, 100); axA.set_ylim(-0.7, n - 0.3)
 axA.set_yticks(y)
 axA.set_yticklabels([d["lab"] for d in data], fontsize=8.2)
 for tick, d in zip(axA.get_yticklabels(), data):
     tick.set_color(COL[d["verdict"]])
-axA.set_xlabel("Diebold–Yılmaz total\nconnectedness (%)", fontsize=9)
-axA.set_title("a   How connected", fontsize=10, loc="left", fontweight="bold")
+axA.set_xlabel("Diebold–Yılmaz Total\nConnectedness (%)", fontsize=9)
+axA.set_title("a   How Connected", fontsize=10, loc="left", fontweight="bold")
 axA.spines[["top", "right"]].set_visible(False)
 
 # --- Panel B: cascade reduction, loudest-node heuristic vs transmitter-targeting ---
@@ -59,23 +59,23 @@ for yi, d in zip(y, data):
 axB.set_xlim(0, 108); axB.set_ylim(-0.7, n - 0.3)
 axB.set_yticks([])
 axB.set_xticks([0, 20, 40, 60, 80, 100])
-axB.set_xlabel("Cascade reduction vs no action (%)\non the calibrated supercritical VAR surrogate", fontsize=9)
-axB.set_title("b   Does transmitter-targeting beat the loudest-node rule", fontsize=10, loc="left", fontweight="bold")
+axB.set_xlabel("Cascade Reduction vs No Action (%)\non the Calibrated Supercritical VAR Surrogate", fontsize=9)
+axB.set_title("b   Does Transmitter-Targeting Beat the Loudest-Node Rule", fontsize=10, loc="left", fontweight="bold")
 axB.spines[["top", "right", "left"]].set_visible(False)
 # verdict chips at far right, clear of the bars
 for yi, d in zip(y, data):
-    axB.text(107, yi, d["verdict"], va="center", ha="right", fontsize=7.6, fontweight="bold",
+    axB.text(107, yi, d["verdict"].capitalize(), va="center", ha="right", fontsize=7.6, fontweight="bold",
              color="white", bbox=dict(boxstyle="round,pad=0.25", fc=COL[d["verdict"]], ec="none"))
 
-legend = [Patch(fc="0.72", label="loudest-node heuristic"),
-          Patch(fc="#444444", label="transmitter-targeting"),
-          Patch(fc=COL["CONFIRM"], label="confirm"),
-          Patch(fc=COL["REFINE"], label="refine"),
-          Patch(fc=COL["FALSIFY"], label="falsify / null")]
+legend = [Patch(fc="0.72", label="Loudest-Node Heuristic"),
+          Patch(fc="#444444", label="Transmitter-Targeting"),
+          Patch(fc=COL["CONFIRM"], label="Confirm"),
+          Patch(fc=COL["REFINE"], label="Refine"),
+          Patch(fc=COL["FALSIFY"], label="Falsify / Null")]
 axB.legend(handles=legend, loc="lower right", bbox_to_anchor=(1.0, -0.40), ncol=3,
            fontsize=7.0, frameon=False, handlelength=1.2, columnspacing=1.1)
 
-fig.suptitle("Five prediction-first transfer tests: directed asymmetry, not connectedness magnitude, decides controllability",
+fig.suptitle("Five Prediction-First Transfer Tests: Directed Asymmetry, Not Connectedness Magnitude, Decides Controllability",
              fontsize=10.5, y=1.0, x=0.02, ha="left", fontweight="bold")
 fig.savefig(f"{R}/transfer_scorecard.pdf", bbox_inches="tight", dpi=200)
 fig.savefig(f"{R}/transfer_scorecard.png", bbox_inches="tight", dpi=150)

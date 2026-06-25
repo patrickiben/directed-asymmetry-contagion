@@ -136,19 +136,19 @@ fig, ax = plt.subplots(1, 3, figsize=(12.2, 4.0))
 a = ax[0]
 for i in range(N): a.plot(dates, S.iloc[:, i], lw=0.9, alpha=.8, label=names[i])
 a.axvspan(pd.Timestamp("2023-06-06"), pd.Timestamp("2023-06-09"), color=GREY, alpha=.2)
-a.text(pd.Timestamp("2023-06-07"), a.get_ylim()[1]*.85, "NYC\norange", fontsize=6, color=CRIT)
+a.text(pd.Timestamp("2023-06-07"), a.get_ylim()[1]*.85, "NYC\nOrange", fontsize=6, color=CRIT)
 a.xaxis.set_major_locator(mdates.MonthLocator()); a.xaxis.set_major_formatter(mdates.DateFormatter("%b"))
-a.set_title("(a) Daily PM2.5 by state (May-Jul 2023)", fontsize=8.3); a.set_ylabel("PM2.5 (ug/m3)"); a.legend(ncol=3, fontsize=5, loc="upper left")
+a.set_title("(a) Daily PM2.5 by State (May-Jul 2023)", fontsize=8.3); a.set_ylabel("PM2.5 (ug/m3)"); a.legend(ncol=3, fontsize=5, loc="upper left")
 a = ax[1]; oi = np.argsort(NET); cols = [CRIT if NET[i] > 0 else STEEL for i in oi]
 a.barh([names[i] for i in oi], NET[oi], color=cols, alpha=.85); a.axvline(0, color="k", lw=.7)
-a.set_title(f"(b) Directed smoke network\ntransmitter={transmitter}, loudest={loudest}", fontsize=8.3); a.set_xlabel("net connectedness (%)"); a.tick_params(axis="y", labelsize=6); a.grid(alpha=.25, axis="x")
+a.set_title(f"(b) Directed Smoke Network\nTransmitter={transmitter}, Loudest={loudest}", fontsize=8.3); a.set_xlabel("Net Connectedness (%)"); a.tick_params(axis="y", labelsize=6); a.grid(alpha=.25, axis="x")
 a = ax[2]; ks = ["none", "greedy", "corr", "var-out", "spillover", "transmitter", "mpc"]
 cc = [CRIT, PURPLE, GREY, TEAL, GREEN, STEEL, GOLD]; vv = [red[k] for k in ks]
-a.bar(range(len(ks)), vv, color=cc, alpha=.85)
-for i, v in enumerate(vv): a.text(i, v + .5, f"{v:+.0f}%", ha="center", fontsize=6.6, fontweight="bold")
-a.set_xticks(range(len(ks))); a.set_xticklabels(["none", "greedy", "corr", "var\nout", "spill", "trans\nmitter", "mpc"], fontsize=6.2)
-a.set_ylabel("cascade reduction vs no-action (%)"); a.set_title("(c) Interdiction + benchmark", fontsize=8.3); a.grid(alpha=.25, axis="y")
-fig.suptitle(f"Fourth pre-registered transfer test — 2023 wildfire-smoke air quality  ·  {verdict.split(':')[0].split('(')[0].strip()}",
+a.bar(range(len(ks)), vv, color=cc, alpha=.85); a.set_ylim(top=max(vv) * 1.18)
+for i, v in enumerate(vv): a.text(i, v + max(vv) * 0.025, f"{v:+.0f}%", ha="center", fontsize=6.6, fontweight="bold")
+a.set_xticks(range(len(ks))); a.set_xticklabels(["None", "Greedy", "Corr", "Var\nOut", "Spill", "Trans-\nmitter", "MPC"], fontsize=6.2)
+a.set_ylabel("Cascade Reduction vs No-Action (%)"); a.set_title("(c) Interdiction + Benchmark", fontsize=8.3); a.grid(alpha=.25, axis="y")
+fig.suptitle(f"Fourth Prediction-First Transfer Test — 2023 Wildfire-Smoke Air Quality  ·  {verdict.split(':')[0].split('(')[0].strip().capitalize()}",
              fontsize=10, fontweight="bold", y=1.02)
 fig.tight_layout()
 fig.savefig(BASE / "smoke23_transfer.pdf", bbox_inches="tight"); fig.savefig(BASE / "smoke23_transfer.png", dpi=200, bbox_inches="tight")

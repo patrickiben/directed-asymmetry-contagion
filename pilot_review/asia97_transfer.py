@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "pilot_cross_tier"))
 import lsa_capstone as L
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 matplotlib.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
     "font.size": 8, "axes.titlesize": 8.5, "axes.labelsize": 8, "xtick.labelsize": 7, "ytick.labelsize": 7,
     "legend.fontsize": 6.8, "axes.linewidth": 0.7, "savefig.dpi": 300})
@@ -145,18 +146,19 @@ json.dump(RES, open(BASE / "asia97_transfer_results.json", "w"), indent=2)
 fig, ax = plt.subplots(1, 3, figsize=(12.2, 4.0))
 a = ax[0]
 for c in names: a.plot(S.index, S[c], lw=1.0, alpha=.85, label=c)
-a.axvline(pd.Timestamp("1997-07-02"), color=CRIT, ls="--", lw=.9); a.text(pd.Timestamp("1997-07-05"), a.get_ylim()[1]*.8, "baht\nfloat", fontsize=6, color=CRIT)
-a.set_title("(a) % depreciation vs 1996 baseline", fontsize=8.3); a.set_ylabel("depreciation (%)"); a.legend(ncol=2, fontsize=5.5, loc="upper left")
+a.axvline(pd.Timestamp("1997-07-02"), color=CRIT, ls="--", lw=.9); a.text(pd.Timestamp("1997-07-05"), a.get_ylim()[1]*.8, "Baht\nFloat", fontsize=6, color=CRIT)
+a.xaxis.set_major_locator(mdates.MonthLocator(bymonth=[1, 7])); a.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m")); a.tick_params(axis="x", labelrotation=20)
+a.set_title("(a) % Depreciation vs 1996 Baseline", fontsize=8.3); a.set_ylabel("Depreciation (%)"); a.legend(ncol=2, fontsize=5.5, loc="upper left")
 a = ax[1]; oi = np.argsort(NET); cols = [CRIT if NET[i] > 0 else STEEL for i in oi]
 a.barh([names[i] for i in oi], NET[oi], color=cols, alpha=.85); a.axvline(0, color="k", lw=.7)
-a.set_title(f"(b) Directed FX network\ntransmitter={transmitter}, loudest={loudest}", fontsize=8.3); a.set_xlabel("net connectedness (%)"); a.grid(alpha=.25, axis="x")
+a.set_title(f"(b) Directed FX Network\nTransmitter={transmitter}, Loudest={loudest}", fontsize=8.3); a.set_xlabel("Net Connectedness (%)"); a.grid(alpha=.25, axis="x")
 a = ax[2]; ks = ["none", "greedy", "corr", "var-out", "spillover", "transmitter", "mpc"]
 cc = [CRIT, PURPLE, GREY, TEAL, GREEN, STEEL, GOLD]; vv = [red[k] for k in ks]
-a.bar(range(len(ks)), vv, color=cc, alpha=.85)
-for i, v in enumerate(vv): a.text(i, v + .5, f"{v:+.0f}%", ha="center", fontsize=6.6, fontweight="bold")
-a.set_xticks(range(len(ks))); a.set_xticklabels(["none", "greedy", "corr", "var\nout", "spill", "trans\nmitter", "mpc"], fontsize=6.2)
-a.set_ylabel("cascade reduction vs no-action (%)"); a.set_title("(c) Interdiction + benchmark", fontsize=8.3); a.grid(alpha=.25, axis="y")
-fig.suptitle(f"Third pre-registered transfer test — 1997 Asian FX crisis  ·  {verdict.split(':')[0].split('(')[0].strip()}",
+a.bar(range(len(ks)), vv, color=cc, alpha=.85); a.set_ylim(top=max(vv) * 1.18)
+for i, v in enumerate(vv): a.text(i, v + max(vv) * 0.025, f"{v:+.0f}%", ha="center", fontsize=6.6, fontweight="bold")
+a.set_xticks(range(len(ks))); a.set_xticklabels(["None", "Greedy", "Corr", "Var\nOut", "Spill", "Trans-\nmitter", "MPC"], fontsize=6.2)
+a.set_ylabel("Cascade Reduction vs No-Action (%)"); a.set_title("(c) Interdiction + Benchmark", fontsize=8.3); a.grid(alpha=.25, axis="y")
+fig.suptitle(f"Third Prediction-First Transfer Test — 1997 Asian FX Crisis  ·  {verdict.split(':')[0].split('(')[0].strip().capitalize()}",
              fontsize=10, fontweight="bold", y=1.02)
 fig.tight_layout()
 fig.savefig(BASE / "asia97_transfer.pdf", bbox_inches="tight"); fig.savefig(BASE / "asia97_transfer.png", dpi=200, bbox_inches="tight")

@@ -132,22 +132,22 @@ fig, ax = plt.subplots(1, 2, figsize=(10.6, 4.1))
 a = ax[0]
 mids = [w["mid"] for w in wins]
 a.plot(mids, [w["top"] for w in wins], "o-", color=STEEL, ms=4)
-a.axhline(full_top, color=CRIT, ls="--", lw=1, label=f"full-sample pick: {names[full_top]}")
+a.axhline(full_top, color=CRIT, ls="--", lw=1, label=f"Full-Sample Pick: {names[full_top]}")
 a.set_yticks(range(N)); a.set_yticklabels(names, fontsize=6); a.xaxis.set_major_locator(mdates.MonthLocator(interval=4))
 a.xaxis.set_major_formatter(mdates.DateFormatter("%b-%y")); plt.setp(a.get_xticklabels(), rotation=30, ha="right", fontsize=6)
-a.set_title(f"(a) Net-transmitter over time\n({n_distinct} distinct states; differs from full-sample {shift_frac:.0%} of the time)", fontsize=8.2)
-a.set_ylabel("net-transmitter state"); a.legend(loc="upper right"); a.grid(alpha=.25)
+a.set_title(f"(a) Net-Transmitter Over Time\n({n_distinct} Distinct States; Differs From Full-Sample {shift_frac:.0%} of the Time)", fontsize=8.2)
+a.set_ylabel("Net-Transmitter State"); a.legend(loc="upper right"); a.grid(alpha=.25)
 a = ax[1]
 cols = {"none": CRIT, "greedy": PURPLE, "static": GREY, "adaptive": STEEL, "oracle-window": GREEN}
 vv = [red[k] for k in CT]
 a.bar(range(len(CT)), vv, color=[cols[k] for k in CT], alpha=.85)
 for i, v in enumerate(vv): a.text(i, v + 1, f"{v:+.0f}%", ha="center", fontsize=7.5, fontweight="bold")
 a.axhline(red["static"], color=GREY, ls=":", lw=.9)
-a.set_xticks(range(len(CT))); a.set_xticklabels(["none", "greedy", "static\n(fixed)", "adaptive\n(track)", "oracle\nwindow"], fontsize=6.6)
-a.set_ylabel("cascade reduction vs no-action (%)")
-a.set_title(f"(b) Does tracking the moving transmitter beat the fixed rule?\ntracking value: oracle {value_of_tracking:+.0f} pts, realizable {realizable:+.0f} pts", fontsize=8.2)
+a.set_xticks(range(len(CT))); a.set_xticklabels(["None", "Greedy", "Static\n(Fixed)", "Adaptive\n(Track)", "Oracle\nWindow"], fontsize=6.6)
+a.set_ylabel("Cascade Reduction vs No-Action (%)")
+a.set_title(f"(b) Does Tracking the Moving Transmitter Beat the Fixed Rule?\nTracking Value: Oracle {value_of_tracking:+.0f} pts, Realizable {realizable:+.0f} pts", fontsize=8.2)
 a.grid(alpha=.25, axis="y"); a.set_ylim(0, max(vv) * 1.18)
-fig.suptitle("Venue-decider — is real-world non-stationarity enough that anticipation beats a static directed rule?",
+fig.suptitle("When Dynamic Anticipation Pays: Tracking a Moving Transmitter Beats a Fixed Rule",
              fontsize=9.5, fontweight="bold", y=1.02)
 fig.tight_layout()
 fig.savefig(BASE / "nonstationary_gate.pdf", bbox_inches="tight"); fig.savefig(BASE / "nonstationary_gate.png", dpi=200, bbox_inches="tight")

@@ -142,10 +142,10 @@ def build_conflict():
 
 TWINS = [
     ("asia97",   "1997 Asian FX",      "CONFIRM",  build_asia97),
-    ("smoke23",  "2023 wildfire smoke","CONFIRM",  build_smoke23),
-    ("flu",      "US influenza",       "REFINE",   build_flu),
-    ("flights",  "2013-14 flight delays","FALSIFY", build_flights),
-    ("conflict", "Sahel conflict",     "NULL",     build_conflict),
+    ("smoke23",  "2023 Wildfire Smoke","CONFIRM",  build_smoke23),
+    ("flu",      "US Influenza",       "REFINE",   build_flu),
+    ("flights",  "2013-14 Flight Delays","FALSIFY", build_flights),
+    ("conflict", "Sahel Conflict",     "NULL",     build_conflict),
 ]
 
 results = {}
@@ -207,15 +207,15 @@ for ax, key in zip(axes, ok):
     rhos = [s["rho"] for s in r["sweep"]]
     tr = [s["transmitter_pct"] for s in r["sweep"]]
     gr = [s["greedy_pct"] for s in r["sweep"]]
-    ax.plot(rhos, tr, "o-", color=STEEL, lw=1.6, ms=4, label=f"transmitter ({r['transmitter_node']})")
-    ax.plot(rhos, gr, "s--", color=PURPLE, lw=1.4, ms=4, label=f"greedy/loudest ({r['loudest_node']})")
+    ax.plot(rhos, tr, "o-", color=STEEL, lw=1.6, ms=4, label=f"Transmitter ({r['transmitter_node']})")
+    ax.plot(rhos, gr, "s--", color=PURPLE, lw=1.4, ms=4, label=f"Greedy/Loudest ({r['loudest_node']})")
     ax.axvline(1.06, color=GREY, ls=":", lw=0.8)
-    ax.set_title(f"{key}\n{r['label']} ({r['verdict_class']})", fontsize=7.6)
-    ax.set_xlabel(r"target $\rho$"); ax.grid(alpha=.25)
-    ax.legend(fontsize=5.8, loc="upper left", frameon=False)
-axes[0].set_ylabel("cascade reduction vs no-action (%)")
-fig.suptitle("SI — rho-sensitivity of the directed-asymmetry result: transmitter-controller vs loudest-node ('greedy') "
-             "across target spectral radius rho\n(dotted grey = published rho=1.06; the qualitative law is invariant in rho)",
+    ax.set_title(f"{r['label']} ({r['verdict_class'].capitalize()})", fontsize=7.6)
+    ax.set_xlabel(r"Target $\rho$"); ax.grid(alpha=.25)
+    ax.legend(fontsize=5.8, loc="center left", frameon=True, framealpha=0.85, edgecolor="0.85", borderpad=0.3)
+axes[0].set_ylabel("Cascade Reduction vs No-Action (%)")
+fig.suptitle("Spectral-Radius (ρ) Sensitivity: The Directed-Asymmetry Verdict Is Invariant to ρ\n(Transmitter Controller vs Loudest-Node 'Greedy'; Dotted Grey = Published ρ=1.06)"
+             "",
              fontsize=8.6, fontweight="bold", y=1.04)
 fig.tight_layout()
 fig.savefig(BASE / "si_rho_sensitivity.pdf", bbox_inches="tight")
