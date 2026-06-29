@@ -147,7 +147,7 @@ a.set_xticks(range(len(CT))); a.set_xticklabels(["None", "Greedy", "Static\n(Fix
 a.set_ylabel("Cascade Reduction vs No-Action (%)")
 a.set_title(f"(b) Does Tracking the Moving Transmitter Beat the Fixed Rule?\nTracking Value: Oracle {value_of_tracking:+.0f} pts, Realizable {realizable:+.0f} pts", fontsize=8.2)
 a.grid(alpha=.25, axis="y"); a.set_ylim(0, max(vv) * 1.18)
-fig.suptitle("When Dynamic Anticipation Pays: Tracking a Moving Transmitter Beats a Fixed Rule",
+fig.suptitle("When Dynamic Anticipation Is Worth Its Cost: Tracking a Moving Transmitter Beats a Fixed Rule",
              fontsize=9.5, fontweight="bold", y=1.02)
 fig.tight_layout()
 fig.savefig(BASE / "nonstationary_gate.pdf", bbox_inches="tight"); fig.savefig(BASE / "nonstationary_gate.png", dpi=200, bbox_inches="tight")
