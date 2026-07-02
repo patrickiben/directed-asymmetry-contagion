@@ -8,7 +8,7 @@ support the quiet unit that *exports* the cascade (*anticipate*)? Across seven r
 financial, environmental, transport, and conflict — a transmitter-targeting controller beats reactive control
 precisely when the network is **directionally asymmetric**. Controllability is set by the directedness of the spread,
 not the magnitude of its connectedness. The pipeline is one uniform sequence: a non-negative VAR surrogate →
-Diebold–Yılmaz directed connectedness (transmitter = max net) → interdiction, with a per-case symmetrisation null that
+Diebold–Yılmaz directed connectedness (transmitter = max net) → interdiction, with a per-case symmetrization null that
 isolates directedness.
 
 ## Prediction-first protocol
@@ -19,7 +19,7 @@ paper, are publicly pre-registered with an external timestamp at **https://osf.i
 `preregistration_2026_new_tests.md`).
 
 ## Layout
-- `pilot_cross_tier/lsa_capstone.py` — core library: non-negative VAR fit, generalised-FEVD / Diebold–Yılmaz
+- `pilot_cross_tier/lsa_capstone.py` — core library: non-negative VAR fit, generalized-FEVD / Diebold–Yılmaz
   connectedness, the interdiction simulation and controllers. (The controller labelled `learned-MPC` in the code is
   the paper's *cross-entropy MPC* — a CEM planner over a learned world-model; `oracle-MPC` is the true-dynamics
   upper bound; `greedy` is the reactive/loudest baseline.)
