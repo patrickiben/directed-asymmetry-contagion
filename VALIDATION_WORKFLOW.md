@@ -385,3 +385,8 @@ parity 0/0):
 - **Lesson 3:** `check_citations.py` now runs a `cited == listed` parity check on every `.tex` (extracts
   `\bibitem` vs the `\cite`/`\citep`/`\citet`/… family); a cited-but-unlisted key is a hard fail, listed-but-uncited
   is a note. The ANS manuscript is 0/0.
+- **"Run both" complement:** built `tools/citation_metadata.workflow.js` — an adversarial resolve→refute Workflow
+  that resolves each reference to its authoritative record and refutes any field mismatch (volume/issue/pages/venue/
+  authors) the deterministic containment gate cannot see. Feed it the tested parser's output:
+  `python3 tools/check_citations.py <ms>.tex --dump-entries` → `Workflow({scriptPath, args:{entries}})`. The repo now
+  runs the deterministic gate AND the adversarial pass, exactly as the false-floor paper does.

@@ -304,6 +304,9 @@ def main():
     ap.add_argument("--json", default=None)
     ap.add_argument("--strict", action="store_true", help="also fail on REVIEW items")
     ap.add_argument("--sleep", type=float, default=0.4, help="seconds between requests (politeness)")
+    ap.add_argument("--dump-entries", action="store_true",
+                    help="print the parsed bibliography as JSON [{key,text,doi,arxiv,year}] and exit "
+                         "(feeds the adversarial citation-metadata workflow; no network)")
     a = ap.parse_args()
 
     tex = open(a.path, encoding="utf-8").read()
@@ -311,6 +314,12 @@ def main():
     if not entries:
         print("No bibliography entries found.", file=sys.stderr)
         sys.exit(2)
+
+    if a.dump_entries:
+        dump = [dict(key=k, **{f: extract(raw)[f] for f in ("text", "doi", "arxiv", "year")})
+                for k, raw in entries]
+        print(json.dumps(dump))
+        sys.exit(0)
 
     unlisted = []
     if not a.path.endswith(".bib"):
