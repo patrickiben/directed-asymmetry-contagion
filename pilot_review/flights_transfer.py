@@ -7,7 +7,7 @@ than physics, biology or markets. Departure delays seed at a weather-hit hub and
 Same pipeline as smoke23 (COVID/flu/Asian-FX/wildfire-smoke). Verdict scored against the pre-registered
 criteria. Honest either way.
 
-Run: /tmp/lsa_venv/bin/python3 flights_transfer.py
+Run: python3 flights_transfer.py
 """
 import sys, json, io, zipfile, urllib.request
 import numpy as np, pandas as pd

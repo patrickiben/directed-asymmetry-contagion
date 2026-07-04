@@ -16,7 +16,7 @@ TWO analyses building on nonnormality_predictor.py machinery (reused, not re-der
     Per system: DY net-transmitter node vs the INDEPENDENTLY-DOCUMENTED origin, match? (web-confirmed).
 
 Reuses loaders + interdict_adv from nonnormality_predictor.py and the cached kernels in /tmp/lsa_nn.
-Run: /tmp/lsa_venv/bin/python3 groundtruth_gap.py
+Run: python3 groundtruth_gap.py
 """
 import sys, json
 import numpy as np

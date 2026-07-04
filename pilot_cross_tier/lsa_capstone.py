@@ -5,7 +5,7 @@ twin  ->  Diebold-Yilmaz generalized-FEVD connectedness (who transmits)  ->  rol
 criticality  ->  ARRO interdiction (CEM-MPC + a learned JEPA world-model, 5 controllers x seeds).
 
 The domain drivers supply a multivariate STRESS series M (T x N) for calibration/network/criticality
-and a crisis-onset state S0 for the controllable interdiction. Run with /tmp/lsa_venv.
+and a crisis-onset state S0 for the controllable interdiction. Run with the pinned environment (see RUN.md).
 """
 import numpy as np
 import autograd.numpy as anp

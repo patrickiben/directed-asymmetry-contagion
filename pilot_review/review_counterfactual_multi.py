@@ -7,7 +7,7 @@ post-intervention data. A pass = the no-action counterfactual over-predicts the 
 modelled intervention reproduces the observed recovery (lower RMSE). Intervention STRUCTURE (who to target)
 is fixed by the pre-intervention network; only its MAGNITUDE (one scalar g) is fit to the post data.
 
-Run: /tmp/lsa_venv/bin/python review_counterfactual_multi.py
+Run: python3 review_counterfactual_multi.py
 """
 import sys, json
 import numpy as np, pandas as pd

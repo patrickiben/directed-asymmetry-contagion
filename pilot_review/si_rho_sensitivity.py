@@ -12,7 +12,7 @@ interdiction simulator). We then sweep target_rho in {1.02, 1.05, 1.08, 1.10} th
 The KEY claim tested: the QUALITATIVE law (confirms: transmitter > greedy; null/falsify: both near
 the noise floor) is INVARIANT across rho even though absolute magnitudes change with rho.
 
-Run: /tmp/lsa_venv/bin/python3 si_rho_sensitivity.py
+Run: python3 si_rho_sensitivity.py
 """
 import sys, json, io, zipfile, urllib.request, time
 import numpy as np, pandas as pd

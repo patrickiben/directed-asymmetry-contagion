@@ -14,7 +14,7 @@ Non-normality indices (scale-invariant -> rescaling irrelevant, computed on the 
 Advantage = transmitter-cascade-reduction% minus greedy% on the rescaled twin, taken from each system's
 *_transfer_results.json where present; equity + COVID recomputed consistently.
 
-Run: /tmp/lsa_venv/bin/python3 nonnormality_predictor.py
+Run: python3 nonnormality_predictor.py
 """
 import sys, json, io, zipfile, urllib.request, time
 import numpy as np, pandas as pd

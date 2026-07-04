@@ -20,7 +20,7 @@ For each of the 7 twins we:
 Per twin we report: MODAL transmitter, P(transmitter == reported/point one) [rank stability],
 and a percentile 95% CI on the advantage. n=7 twins is small; reported honestly, no overclaiming.
 
-K=300 by default. Run: /tmp/lsa_venv/bin/python3 bootstrap_ci.py
+K=300 by default. Run: python3 bootstrap_ci.py
 """
 import sys, json, time
 import numpy as np, pandas as pd

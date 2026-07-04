@@ -22,7 +22,7 @@ treatment-assignment design and an exposure mapping that do not exist for an obs
 well-posed analogue here is the total-effect / spillover estimator (spillover-IRF). We say so rather than force
 an ill-posed comparison.
 
-Run: /tmp/lsa_venv/bin/python validity_benchmark.py
+Run: python3 validity_benchmark.py
 """
 import sys, json
 import numpy as np, pandas as pd

@@ -13,7 +13,7 @@ invariants of the resulting graph / clique complex:
 The criticality is cross-checked against an INDEPENDENT, non-topological signal: cross-sectional realized
 volatility. Claim: the topology collapses (b0 -> 1, theta* up) exactly at the volatility-defined breach, with
 no model fitting -- the topological framework is computable on data and behaves as the theory predicts.
-Run: /tmp/lsa_venv/bin/python review_topology.py
+Run: python3 review_topology.py
 """
 import json
 import numpy as np, pandas as pd

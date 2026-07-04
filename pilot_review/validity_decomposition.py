@@ -21,7 +21,7 @@ The decisive comparison is static-transmit vs mpc-oracle:
   * if mpc-oracle >> static-transmit -> anticipation genuinely adds value beyond knowing the transmitter.
 
 Run on a controlled synthetic directed twin AND the real COVID-19 state twin.
-Run: /tmp/lsa_venv/bin/python validity_decomposition.py
+Run: python3 validity_decomposition.py
 """
 import sys, json
 import numpy as np, pandas as pd

@@ -19,7 +19,7 @@ Decision rule reported honestly:
   * if ORACLE-WINDOW ~ STATIC                                -> the transmitter is stable; static suffices
                                                                 (honest null; points to Nature Communications).
 
-Run: /tmp/lsa_venv/bin/python nonstationary_gate.py
+Run: python3 nonstationary_gate.py
 """
 import sys, json
 import numpy as np, pandas as pd

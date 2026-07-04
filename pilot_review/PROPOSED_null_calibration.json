@@ -1,0 +1,17 @@
+{
+ "n_true_null_networks": 200,
+ "N": 8,
+ "T": 150,
+ "rho": 0.6,
+ "draws_per_null": 300,
+ "false_positive_rate_at_0.05": 0.03,
+ "expected": 0.05,
+ "KS_vs_uniform": {
+  "statistic": 0.172,
+  "p": 0.0
+ },
+ "false_positives_controlled": true,
+ "p_uniform": false,
+ "verdict": "conservative (controls false positives; p-values non-uniform in the SAFE direction)",
+ "interpretation": "A symmetric (zero-directedness) DGP produces false 'directed' calls only 3.0% of the time at alpha=0.05 (target <=5%): the test does not manufacture significance from finite-sample noise. Non-uniformity of the p-values reflects the flip null's magnitude-preserving conservatism, which errs toward NOT flagging directedness."
+}

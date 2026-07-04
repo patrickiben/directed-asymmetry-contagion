@@ -8,7 +8,7 @@ Pipeline (identical to the rest of the paper): non-negative VAR twin -> Diebold-
 interdiction (none/greedy/static-transmitter/mpc/oracle) -> benchmark vs standard influence estimators ->
 symmetrization null. Verdict is scored against the pre-registered criteria.
 
-Run: /tmp/lsa_venv/bin/python flu_transfer.py
+Run: python3 flu_transfer.py
 """
 import sys, json, urllib.request
 import numpy as np, pandas as pd

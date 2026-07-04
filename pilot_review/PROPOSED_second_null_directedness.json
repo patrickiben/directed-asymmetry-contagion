@@ -1,0 +1,58 @@
+{
+  "network": "2008 equities",
+  "N": 8,
+  "rho": 1.047,
+  "observed": {
+    "top_transmitter": "US (S&P 500)",
+    "max_net": 21.22,
+    "total_directed_flow": 27.8
+  },
+  "nulls": {
+    "(A) direction-flip": [
+      {
+        "statistic": "max net-transmitter",
+        "observed": 21.22,
+        "null_mean": 20.78,
+        "null_sd": 8.07,
+        "z": 0.05,
+        "p_value": 0.4106,
+        "null_transmitter_recovery": 0.008,
+        "chance": 0.125
+      },
+      {
+        "statistic": "total directed flow",
+        "observed": 27.8,
+        "null_mean": 45.29,
+        "null_sd": 17.37,
+        "z": -1.01,
+        "p_value": 0.7962,
+        "null_transmitter_recovery": 0.008,
+        "chance": 0.125
+      }
+    ],
+    "(B) weight-permutation": [
+      {
+        "statistic": "max net-transmitter",
+        "observed": 21.22,
+        "null_mean": 25.98,
+        "null_sd": 16.55,
+        "z": -0.29,
+        "p_value": 0.5365,
+        "null_transmitter_recovery": 0.011,
+        "chance": 0.125
+      },
+      {
+        "statistic": "total directed flow",
+        "observed": 27.8,
+        "null_mean": 49.27,
+        "null_sd": 23.24,
+        "z": -0.92,
+        "p_value": 0.8412,
+        "null_transmitter_recovery": 0.011,
+        "chance": 0.125
+      }
+    ]
+  },
+  "identity_structural": true,
+  "magnitude_anomalous": false
+}

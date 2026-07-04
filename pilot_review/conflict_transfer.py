@@ -11,7 +11,7 @@ Same pipeline as flights_transfer / smoke23 (COVID/flu/Asian-FX/wildfire-smoke/f
 against the pre-registered criteria. Honest either way — the prediction is already committed; this only
 computes it.
 
-Run: /tmp/lsa_venv/bin/python3 conflict_transfer.py
+Run: python3 conflict_transfer.py
 """
 import sys, json, zipfile
 import numpy as np, pandas as pd

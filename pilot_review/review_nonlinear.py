@@ -9,7 +9,7 @@ the true-model oracle.
 Controllers (CEM receding-horizon MPC unless noted): none; greedy (support the loudest); linear-oracle-MPC
 (plans with a VAR fit to exploration -- misspecified); learned-MPC (nonlinear MLP world-model, trained on the
 SAME exploration); true-oracle-MPC (plans with the real nonlinear dynamics, an upper bound). 24 seeds.
-Run: /tmp/lsa_venv/bin/python review_nonlinear.py
+Run: python3 review_nonlinear.py
 """
 import json
 import numpy as np

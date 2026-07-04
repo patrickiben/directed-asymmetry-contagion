@@ -13,7 +13,7 @@ Protocol (strictly pre-registered in time):
 If the framework had only circular, in-sample value, neither forecast would track reality. The test passes
 iff (i) the no-action forecast stays high/diverges (the twin captures the explosive pre-OMT regime), and
 (ii) the OMT-like support forecast reproduces the observed post-OMT compression out-of-sample (lower RMSE).
-Run: /tmp/lsa_venv/bin/python review_counterfactual.py
+Run: python3 review_counterfactual.py
 """
 import json
 import numpy as np, pandas as pd

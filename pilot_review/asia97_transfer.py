@@ -4,7 +4,7 @@ THIRD pre-registered transfer test (asia97_PREREGISTRATION.md) — the 1997 Asia
 A candidate *confirmatory* domain: a crisis with a clear quiet origin (Thailand) distinct from its loudest
 casualties. Same pipeline as the rest of the paper. Verdict scored against the pre-registered criteria.
 
-Run: /tmp/lsa_venv/bin/python asia97_transfer.py
+Run: python3 asia97_transfer.py
 """
 import sys, json, io, urllib.request, time
 import numpy as np, pandas as pd

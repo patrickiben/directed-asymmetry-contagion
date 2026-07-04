@@ -1,0 +1,159 @@
+{
+ "network": "2008 equities (weekly decline-stress)",
+ "n_nodes": 8,
+ "T": 181,
+ "bootstrap_B": 3000,
+ "block_mean": 13,
+ "transmitter": "US (S&P 500)",
+ "bootstrap": {
+  "us_net": 21.22,
+  "us_ci95": [
+   0.72,
+   102.11
+  ],
+  "us_se": 29.6,
+  "us_fraction_negative": 0.012
+ },
+ "design_analysis": {
+  "note": "Gelman-Carlin retrodesign; SE from the stationary bootstrap; significance = CI excludes 0",
+  "by_assumed_true_net": [
+   {
+    "true_net": 5.0,
+    "power": 0.054,
+    "type_s": 0.3122,
+    "type_m": 13.85
+   },
+   {
+    "true_net": 10.0,
+    "power": 0.062,
+    "type_s": 0.1719,
+    "type_m": 7.0
+   },
+   {
+    "true_net": 21.2,
+    "power": 0.111,
+    "type_s": 0.0356,
+    "type_m": 3.39
+   },
+   {
+    "true_net": 40.0,
+    "power": 0.272,
+    "type_s": 0.0016,
+    "type_m": 1.9
+   }
+  ]
+ },
+ "tost_equivalence": {
+  "SESOI_net_pct": 5.0,
+  "n_nonUS_equivalent_to_zero": 0,
+  "n_nonUS": 7,
+  "per_node": [
+   {
+    "node": "UK (FTSE 100)",
+    "net": 1.97,
+    "se": 17.72,
+    "tost_p": 0.4322,
+    "equivalent_to_zero": false
+   },
+   {
+    "node": "Germany (DAX)",
+    "net": 2.95,
+    "se": 12.37,
+    "tost_p": 0.4343,
+    "equivalent_to_zero": false
+   },
+   {
+    "node": "France (CAC 40)",
+    "net": -1.71,
+    "se": 16.56,
+    "tost_p": 0.4213,
+    "equivalent_to_zero": false
+   },
+   {
+    "node": "Japan (Nikkei 225)",
+    "net": -9.58,
+    "se": 7.52,
+    "tost_p": 0.7286,
+    "equivalent_to_zero": false
+   },
+   {
+    "node": "Hong Kong (Hang Seng)",
+    "net": -15.68,
+    "se": 6.23,
+    "tost_p": 0.9568,
+    "equivalent_to_zero": false
+   },
+   {
+    "node": "Netherlands (AEX)",
+    "net": -0.84,
+    "se": 10.72,
+    "tost_p": 0.349,
+    "equivalent_to_zero": false
+   },
+   {
+    "node": "Brazil (Bovespa)",
+    "net": 1.66,
+    "se": 16.25,
+    "tost_p": 0.4185,
+    "equivalent_to_zero": false
+   }
+  ]
+ },
+ "benjamini_yekutieli_fdr": {
+  "family_size": 8,
+  "c_m": 2.718,
+  "n_survive_0.05": 0,
+  "survivors": [],
+  "note": "one-sided net-transmitter p per node; BY is valid under the edge dependence induced by a single VAR",
+  "per_node": [
+   {
+    "node": "US (S&P 500)",
+    "net": 21.22,
+    "p": 0.0123,
+    "survives_BY_FDR": false
+   },
+   {
+    "node": "Germany (DAX)",
+    "net": 2.95,
+    "p": 0.3853,
+    "survives_BY_FDR": false
+   },
+   {
+    "node": "UK (FTSE 100)",
+    "net": 1.97,
+    "p": 0.4013,
+    "survives_BY_FDR": false
+   },
+   {
+    "node": "Brazil (Bovespa)",
+    "net": 1.66,
+    "p": 0.434,
+    "survives_BY_FDR": false
+   },
+   {
+    "node": "Netherlands (AEX)",
+    "net": -0.84,
+    "p": 0.4843,
+    "survives_BY_FDR": false
+   },
+   {
+    "node": "France (CAC 40)",
+    "net": -1.71,
+    "p": 0.554,
+    "survives_BY_FDR": false
+   },
+   {
+    "node": "Japan (Nikkei 225)",
+    "net": -9.58,
+    "p": 0.915,
+    "survives_BY_FDR": false
+   },
+   {
+    "node": "Hong Kong (Hang Seng)",
+    "net": -15.68,
+    "p": 0.965,
+    "survives_BY_FDR": false
+   }
+  ]
+ }
+}

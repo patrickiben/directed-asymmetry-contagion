@@ -11,7 +11,7 @@ separating boundaries between national markets dissolve (kappa_B -> 1, chi -> 0)
   (3) ARRO interdiction — a controllable rescaled-explosive decline-stress twin; the learned world-model
       targets the transmitter market and is compared to the myopic 'support the hardest-hit market'.
 
-Run: /tmp/lsa_venv/bin/python equity_deep.py
+Run: python3 equity_deep.py
 """
 import sys, json
 import numpy as np, pandas as pd

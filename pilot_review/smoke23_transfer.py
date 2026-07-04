@@ -4,7 +4,7 @@ disaster. A new domain CLASS (environmental disaster) with a directed PM2.5 cont
 
 Same pipeline. Verdict scored against the pre-registered criteria. Honest either way.
 
-Run: /tmp/lsa_venv/bin/python smoke23_transfer.py
+Run: python3 smoke23_transfer.py
 """
 import sys, json, io, zipfile, urllib.request
 import numpy as np, pandas as pd

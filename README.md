@@ -57,6 +57,18 @@ Fully offline (no network): `cd out_of_sample_probe && python3 reproduce_oos.py 
 out-of-sample real-data lead (mean +3.3%, three-network sign test p=0.50, housing unstable). See **`RUN.md`** for
 which scripts require network access and a claim→script map.
 
+## Verification & reproducibility
+A deterministic pre-submission verification harness lives in `tools/` and `tests/` (nothing here uses a language
+model to decide correctness or existence):
+
+- One command: `bash tools/presubmit.sh <submission_folder>` — absolute-path guard, property/invariant tests, the
+  symbolic exact oracle, citation-integrity gate, and AI-artifact scrub, with a single pass/fail verdict.
+- CI (`.github/workflows/reproduce.yml`) runs the code gates + a deterministic offline reproduction on a cold
+  runner every push. See the **Verification & integrity gates** table in `RUN.md` for each check individually.
+- **`VALIDATION_WORKFLOW.md`** is the full, reproducible record: how the harness was built (multi-agent method
+  research → tiered gates → property/metamorphic + symbolic verification → adversarial referee panel → statistical
+  robustness), with the exact scripts, commands, and a single copy-paste re-run block.
+
 ## Citation & license
 Please cite the paper (and this archive's DOI) when using the code. Code released under the MIT License; the included
 data are public factual series attributed to their providers (see `pilot_3p46_equity/EQUITY_DATA_README.md`).

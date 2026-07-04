@@ -1,0 +1,79 @@
+{
+  "network": "2008 equities (weekly decline-stress)",
+  "K": 500,
+  "block_mean": 13,
+  "T": 181,
+  "tci": 80.77,
+  "tci_ci": [
+    74.84,
+    85.86
+  ],
+  "nodes": [
+    {
+      "node": "US (S&P 500)",
+      "net": 21.22,
+      "ci_lo": 0.67,
+      "ci_hi": 103.65,
+      "p_net_positive": 0.984,
+      "distinguishable_from_zero": true
+    },
+    {
+      "node": "Germany (DAX)",
+      "net": 2.95,
+      "ci_lo": -37.01,
+      "ci_hi": 12.11,
+      "p_net_positive": 0.624,
+      "distinguishable_from_zero": false
+    },
+    {
+      "node": "UK (FTSE 100)",
+      "net": 1.97,
+      "ci_lo": -46.24,
+      "ci_hi": 16.52,
+      "p_net_positive": 0.622,
+      "distinguishable_from_zero": false
+    },
+    {
+      "node": "Brazil (Bovespa)",
+      "net": 1.66,
+      "ci_lo": -11.15,
+      "ci_hi": 52.28,
+      "p_net_positive": 0.568,
+      "distinguishable_from_zero": false
+    },
+    {
+      "node": "Netherlands (AEX)",
+      "net": -0.84,
+      "ci_lo": -25.32,
+      "ci_hi": 13.01,
+      "p_net_positive": 0.542,
+      "distinguishable_from_zero": false
+    },
+    {
+      "node": "France (CAC 40)",
+      "net": -1.71,
+      "ci_lo": -44.07,
+      "ci_hi": 15.42,
+      "p_net_positive": 0.47,
+      "distinguishable_from_zero": false
+    },
+    {
+      "node": "Japan (Nikkei 225)",
+      "net": -9.58,
+      "ci_lo": -21.25,
+      "ci_hi": 6.49,
+      "p_net_positive": 0.08,
+      "distinguishable_from_zero": false
+    },
+    {
+      "node": "Hong Kong (Hang Seng)",
+      "net": -15.68,
+      "ci_lo": -23.73,
+      "ci_hi": 0.94,
+      "p_net_positive": 0.034,
+      "distinguishable_from_zero": false
+    }
+  ],
+  "top_transmitter": "US (S&P 500)",
+  "top_ci_excludes_zero": true
+}

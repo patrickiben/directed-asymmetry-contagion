@@ -20,7 +20,7 @@ exceed what a DIRECTION-DESTROYING null produces?  Two complementary nulls:
 
 Reuses, verbatim, the loaders + interdict_adv + fit from nonnormality_predictor.py.
 
-Run: /tmp/lsa_venv/bin/python3 directedness_null.py
+Run: python3 directedness_null.py
 Outputs: directedness_null.json + directedness_null.png/.pdf
 """
 import sys, json, time

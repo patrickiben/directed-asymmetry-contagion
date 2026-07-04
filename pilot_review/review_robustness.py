@@ -11,7 +11,7 @@ REVIEW RESPONSE (Major concern 3: researcher degrees of freedom; no null model).
     compared against the REAL intervention date (Oct 2008) vs every other possible date: the real date sits
     in the extreme tail of the rho-drop distribution, so the crossing is specific to the intervention.
 
-Run: /tmp/lsa_venv/bin/python review_robustness.py
+Run: python3 review_robustness.py
 """
 import sys, json
 import numpy as np, pandas as pd

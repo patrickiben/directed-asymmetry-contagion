@@ -36,3 +36,20 @@ asia97, smoke23, and flu fetch live (FRED / EPA / CDC Delphi) if their caches ar
 The dated pre-commitments are `pilot_review/*_PREREGISTRATION.md` (asia97, smoke23, flu, flights, conflict).
 Three further out-of-sample predictions, on systems not in the paper, are pre-registered with an external
 timestamp at `osf.io/49kn7` (see `preregistration_2026_new_tests.md`).
+
+## Verification & integrity gates (`tools/`, `tests/`)
+Deterministic pre-submission checks. Nothing here uses a language model to decide correctness or existence.
+
+| Check | Command | What it proves |
+|---|---|---|
+| Property / invariant tests | `pip install pytest hypothesis && pytest tests/` | GFEVD rows sum to 1; connectedness is label-permutation equivariant; net sums to zero; the non-negative VAR surrogate has off-diagonals ≥ 0; the symmetrization null is exactly symmetric and ρ-matched. Randomized inputs (Hypothesis), so a silent implementation bug is caught, not just a hand-picked case. |
+| Symbolic exact oracle | `pip install sympy && python3 tools/verify_symbolic.py` | Independent SymPy exact-rational re-derivation of the Pesaran–Shin GFEVD + connectedness on a fixed fixture, asserted equal to the engine to < 1e-12. Proves the engine computes the *right* number, which the invariant tests do not. |
+| Citation integrity | `python3 tools/check_citations.py <manuscript>.tex` | Every reference resolves on CrossRef / OpenAlex / arXiv and its metadata matches; flags fabrication, identifier-hijacking (a DOI resolving to a *different* paper), dead DOIs, and retractions. |
+| AI-artifact / hidden-text | `python3 tools/scrub_ai_artifacts.py <manuscript>.tex [SI.tex] --pdf <manuscript>.pdf` | No leftover assistant boilerplate, unfilled placeholders, or hidden/white PDF text. |
+| Absolute-path guard | `bash tools/check_paths.sh` | No machine-specific paths in executable code (the classic clean-clone failure). |
+| Mutation adequacy (periodic) | `pip install mutmut && mutmut run` | Whether the tests actually *exercise* the load-bearing math (surviving mutant ⇒ untested logic). See `setup.cfg`. |
+| **Everything, one command** | `bash tools/presubmit.sh /path/to/SUBMISSION_folder` | Runs all of the above and prints a single verdict. Run before hitting submit. |
+
+The code checks (`check_paths.sh`, `pytest tests/`) plus a deterministic offline re-derivation of the
+out-of-sample lead also run automatically on every push via `.github/workflows/reproduce.yml` — a cold
+Ubuntu runner reproduces a reviewer's fresh-machine experience.

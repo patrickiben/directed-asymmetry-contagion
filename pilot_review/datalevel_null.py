@@ -28,7 +28,7 @@ For each system: refit on K>=300 surrogates -> null distribution of D -> one-sid
   p = (1 + #{D_surrogate >= D_observed}) / (K + 1)        (is observed directedness BEYOND the null?)
 and the percentile of the observed D within the null.
 
-Run: /tmp/lsa_venv/bin/python3 datalevel_null.py
+Run: python3 datalevel_null.py
 """
 import sys, json, io, urllib.request, time, zipfile
 import numpy as np, pandas as pd

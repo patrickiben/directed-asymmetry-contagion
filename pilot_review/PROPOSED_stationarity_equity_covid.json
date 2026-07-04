@@ -1,0 +1,202 @@
+{
+ "alpha": 0.05,
+ "method": "ADF (H0 unit root, autolag=AIC, regression=c) + KPSS (H0 stationarity, regression=c)",
+ "networks": [
+  {
+   "name": "2008 equities (decline-stress)",
+   "N": 8,
+   "T": 181,
+   "adf_stationary": 8,
+   "both_tests": 8,
+   "needs_differencing": 0,
+   "per_series": {
+    "US (S&P 500)": {
+     "adf_p": 0.0004,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "UK (FTSE 100)": {
+     "adf_p": 0.0032,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Germany (DAX)": {
+     "adf_p": 0.0075,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "France (CAC 40)": {
+     "adf_p": 0.0018,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Japan (Nikkei 225)": {
+     "adf_p": 0.0,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Hong Kong (Hang Seng)": {
+     "adf_p": 0.0,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Netherlands (AEX)": {
+     "adf_p": 0.0012,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Brazil (Bovespa)": {
+     "adf_p": 0.0,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "name": "COVID-19 (weekly new cases)",
+   "N": 14,
+   "T": 122,
+   "adf_stationary": 14,
+   "both_tests": 14,
+   "needs_differencing": 0,
+   "per_series": {
+    "California": {
+     "adf_p": 0.0,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Texas": {
+     "adf_p": 0.0035,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Florida": {
+     "adf_p": 0.0001,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "New York": {
+     "adf_p": 0.0001,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Illinois": {
+     "adf_p": 0.001,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Pennsylvania": {
+     "adf_p": 0.0203,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "North Carolina": {
+     "adf_p": 0.0034,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Ohio": {
+     "adf_p": 0.0034,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Georgia": {
+     "adf_p": 0.0053,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Michigan": {
+     "adf_p": 0.0167,
+     "kpss_p": 0.0709,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "New Jersey": {
+     "adf_p": 0.0018,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Tennessee": {
+     "adf_p": 0.0005,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Arizona": {
+     "adf_p": 0.0004,
+     "kpss_p": 0.1,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    },
+    "Virginia": {
+     "adf_p": 0.0041,
+     "kpss_p": 0.0887,
+     "adf_stationary": true,
+     "kpss_stationary": true,
+     "both": true,
+     "note": ""
+    }
+   }
+  }
+ ]
+}

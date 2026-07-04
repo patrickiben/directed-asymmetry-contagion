@@ -23,7 +23,7 @@ of the flu anchor (i.e. collapses among the 6 directed twins) we set holds=false
 Kernels: cached /tmp/lsa_nn/Phi_*.npy, Sig_*.npy (== fresh fit_var_nonneg ridge=5e-2; verified maxdiff 0).
 Panels reconstructed (cached data, no slow refetch) only to read mean-stress for 'loudest'.
 
-Run: /tmp/lsa_venv/bin/python3 advantage_gap.py
+Run: python3 advantage_gap.py
 """
 import sys, json
 import numpy as np, pandas as pd
