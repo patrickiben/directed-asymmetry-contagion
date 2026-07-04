@@ -61,6 +61,9 @@ def _get(url, mailto, accept="application/json", retries=3):
 
 # ------------------------------------------------------------------ LaTeX -> text
 def delatex(s):
+    # accented letters first: {\"u} / \"{u} / \'e -> u / e (keep the base letter, drop the accent)
+    s = re.sub(r'\{\\[\'"`^~=.c]\{?([a-zA-Z])\}?\}', r"\1", s)
+    s = re.sub(r'\\[\'"`^~=.c]\{?([a-zA-Z])\}?', r"\1", s)
     s = re.sub(r"\\textit\{([^}]*)\}", r"\1", s)
     s = re.sub(r"\\textbf\{([^}]*)\}", r"\1", s)
     s = re.sub(r"\\texttt\{([^}]*)\}", r"\1", s)
@@ -93,18 +96,43 @@ def reference_parity(tex):
         cited |= {k.strip() for k in m.group(1).split(",") if k.strip()}
     return sorted(listed - cited), sorted(cited - listed)
 
+def _bib_field(body, name):
+    """Extract a bibtex field value with balanced-brace / quoted / bare handling, NOT requiring a
+    trailing newline (false-floor lesson 2a: fields are often all on one line)."""
+    m = re.search(r"\b" + name + r"\s*=\s*", body, re.I)
+    if not m or m.end() >= len(body):
+        return ""
+    i = m.end(); c = body[i]
+    if c == "{":
+        depth, j = 0, i
+        while j < len(body):
+            if body[j] == "{":
+                depth += 1
+            elif body[j] == "}":
+                depth -= 1
+                if depth == 0:
+                    break
+            j += 1
+        val = body[i + 1:j]
+    elif c == '"':
+        j = body.find('"', i + 1)
+        val = body[i + 1:j] if j != -1 else body[i + 1:]
+    else:                                   # bare value (a number) up to the next comma / brace
+        j = i
+        while j < len(body) and body[j] not in ",}\n":
+            j += 1
+        val = body[i:j]
+    return delatex(val.strip())
+
 def parse_bibfile(bib):
     entries = []
-    # brace/entry-boundary matched so one-entry-per-line .bib files (closing brace NOT on its
-    # own line) are not silently skipped (false-floor lesson 2a).
+    # entry-boundary matched so one-entry-per-line .bib files (closing brace NOT on its own line)
+    # are not silently skipped (false-floor lesson 2a).
     for m in re.finditer(r"@\w+\s*\{\s*([^,]+),(.*?)\}\s*(?=@|\Z)", bib, re.S):
         key, body = m.group(1).strip(), m.group(2)
-        def field(name):
-            fm = re.search(name + r"\s*=\s*[{\"](.+?)[}\"]\s*,?\s*\n", body, re.S | re.I)
-            return delatex(fm.group(1)) if fm else ""
-        txt = " ".join(x for x in [field("author"), field("title"), field("journal"),
-                                   field("year"), field("doi"), field("eprint")] if x)
-        entries.append((key, txt))
+        parts = [_bib_field(body, f) for f in ("author", "title", "journal", "booktitle",
+                 "volume", "number", "pages", "year", "doi", "eprint")]
+        entries.append((key, " ".join(x for x in parts if x)))
     return entries
 
 # ------------------------------------------------------------------ metadata extraction
