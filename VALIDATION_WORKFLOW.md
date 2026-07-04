@@ -341,3 +341,47 @@ Still portable from the Neuro_Atlas run (optional next):
 - **Reporting checklist (MDAR / TOP), Binder one-click launch, archival DOI (Zenodo).**
 - **Convergence-order / method-of-manufactured-solutions** — only if a numerical *solver* is added; N/A for the
   current closed-form GFEVD.
+
+---
+
+## Addendum (2026-07-04) — lessons ported from the false-floor run
+
+The third sibling, `~/Documents/false-floor/VALIDATION_WORKFLOW.md` (cautionary methods paper, TMLR),
+surfaced three harness lessons worth carrying here:
+
+1. **Run CI on the Python version matrix you actually ship on; never assert cross-platform floating-point
+   bit-equality.** There, an inline-consistency check using exact `==` passed on Python 3.9 but *failed* on
+   3.12: CPython 3.12 made `sum()` use compensated (Neumaier) summation, so a hand-looped CDF sum and a
+   `sum()` diverged by ~1 ULP. Fix = a tolerance (`< 1e-12`) plus a CI matrix (3.11 + 3.12) that exposes it.
+   **Applies here:** `tests/test_invariants.py` and `tools/verify_symbolic.py` compare floats — keep the
+   tolerances, and consider widening `.github/workflows/reproduce.yml` to a 3.11+3.12 matrix.
+2. **Deterministic and adversarial citation checks are complementary — run both.** `check_citations.py` scores
+   by title containment, so it *passes* a real paper that carries a wrong year/volume (there, `vetter2000` had
+   a perfect title match but the wrong year, volume, and issue); an adversarial resolve→refute LLM Workflow
+   caught that metadata error, while the deterministic gate is what catches existence / DOI-hijack / dead-DOI.
+   Neither alone suffices. **Port into this repo's `check_citations.py`:** the false-floor run fixed three real
+   bugs in it — (a) the `.bib` parser missed one-entry-per-line files (required the closing brace on its own
+   line); now brace-matched; (b) a DOI suffix like `rspb.2001.1812` was mis-read as the year 1812; now the DOI
+   is stripped before year harvest; (c) DOI-less conference venues (PMLR/ICML/MLSys/TMLR) were hard-FLAGged as
+   "possible fabrication" instead of REVIEW; now widened to REVIEW.
+3. **When the build injects citations from prose (pandoc/regex), assert a post-build invariant** (`\bibitem`
+   count == entries cited). There, prose editing silently dropped three references (including the single most
+   on-point prior work) from the bibliography while they still appeared in the text. This repo uses inline
+   `\bibitem`, so the mirror failure mode is a listed-but-uncited (or cited-but-unlisted) entry — assert
+   `cited == listed` either way.
+
+### Actioned here (2026-07-04)
+All three lessons were implemented and verified against the ANS manuscript (still 22 OK / 6 REVIEW / 0 FLAG,
+parity 0/0):
+- **Lesson 1:** `.github/workflows/reproduce.yml` now runs a **3.11 + 3.12** matrix. Our float checks already use
+  tolerances (`verify_symbolic.py` `< 1e-12`; `test_invariants.py` `allclose`), so both versions pass — the matrix
+  is the guard against a future exact-`==` creeping in.
+- **Lesson 2:** ported the three `check_citations.py` bug fixes — (a) `.bib` parser now brace/entry-boundary
+  matched (one-entry-per-line files parse); (b) the DOI/arXiv id is stripped before year harvest (a suffix like
+  `rspb.2001.1812` no longer becomes the year 1812); (c) DOI-less conference venues (PMLR/ICML/NeurIPS/UAI/TMLR/…)
+  are REVIEW, not a hard FLAG. Added a **deterministic year-drift check** in the query branch (a right-title /
+  wrong-year citation is now downgraded to REVIEW), the deterministic complement to the adversarial resolve→refute
+  pass. Verified by micro-tests (year→2001; venue→REVIEW; one-line `.bib`→2 entries).
+- **Lesson 3:** `check_citations.py` now runs a `cited == listed` parity check on every `.tex` (extracts
+  `\bibitem` vs the `\cite`/`\citep`/`\citet`/… family); a cited-but-unlisted key is a hard fail, listed-but-uncited
+  is a note. The ANS manuscript is 0/0.

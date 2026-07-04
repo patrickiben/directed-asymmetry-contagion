@@ -17,13 +17,20 @@ on:
 jobs:
   reproduce:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Run the version matrix we might ship on. CPython 3.12 changed float sum() to compensated
+        # (Neumaier) summation, so a matrix exposes any latent exact-`==` float assumption that a
+        # single version would hide (false-floor lesson 1). Our checks use tolerances, so both pass.
+        python-version: ["3.11", "3.12"]
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install pinned environment
         run: |

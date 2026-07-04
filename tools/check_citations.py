@@ -83,9 +83,21 @@ def parse_thebibliography(tex):
         entries.append((parts[i].strip(), parts[i + 1].strip()))
     return entries
 
+def reference_parity(tex):
+    r"""Cross-check that every \bibitem is \cite'd and every \cite'd key is listed
+    (false-floor lesson 3: prose edits can silently drop a listed-or-cited reference)."""
+    listed = set(re.findall(r"\\bibitem(?:\[[^\]]*\])?\{([^}]*)\}", tex))
+    cited = set()
+    for m in re.finditer(r"\\(?:cite|citep|citet|citealt|citealp|citeauthor|citeyear|"
+                         r"textcite|parencite|autocite)\*?(?:\[[^\]]*\])*\{([^}]*)\}", tex):
+        cited |= {k.strip() for k in m.group(1).split(",") if k.strip()}
+    return sorted(listed - cited), sorted(cited - listed)
+
 def parse_bibfile(bib):
     entries = []
-    for m in re.finditer(r"@\w+\s*\{\s*([^,]+),(.*?)\n\}", bib, re.S):
+    # brace/entry-boundary matched so one-entry-per-line .bib files (closing brace NOT on its
+    # own line) are not silently skipped (false-floor lesson 2a).
+    for m in re.finditer(r"@\w+\s*\{\s*([^,]+),(.*?)\}\s*(?=@|\Z)", bib, re.S):
         key, body = m.group(1).strip(), m.group(2)
         def field(name):
             fm = re.search(name + r"\s*=\s*[{\"](.+?)[}\"]\s*,?\s*\n", body, re.S | re.I)
@@ -106,10 +118,19 @@ def extract(raw):
     am = re.search(r"arXiv:\s*(\d{4}\.\d{4,5})", raw, re.I) or re.search(r"arXiv:\s*(\d{4}\.\d{4,5})", txt, re.I)
     if am:
         arx = am.group(1)
-    years = re.findall(r"\((\d{4})[a-z]?\)", txt) or re.findall(r"\b(19|20)\d{2}\b", txt)
-    year = None
-    for y in re.findall(r"\b(1[89]\d{2}|20\d{2})\b", txt):
-        year = y  # last plausible year wins (publication year is typically last)
+    # Harvest the year from text with the DOI / arXiv id REMOVED, so a DOI suffix such as
+    # 10.1098/rspb.2001.1812 is not mis-read as the year 1812 (false-floor lesson 2b).
+    # Prefer a parenthesised year (the publication year in Nature style), else the last bare year.
+    yr_src = txt
+    if doi:
+        yr_src = yr_src.replace(doi, " ")
+    if arx:
+        yr_src = re.sub(r"arXiv:\s*\d{4}\.\d{4,5}", " ", yr_src, flags=re.I)
+    paren = re.findall(r"\((1[89]\d{2}|20\d{2})[a-z]?\)", yr_src)
+    year = paren[-1] if paren else None
+    if year is None:
+        for y in re.findall(r"\b(1[89]\d{2}|20\d{2})\b", yr_src):
+            year = y  # last plausible bare year wins
     # title heuristic: text between the author block (ends at first '. ') and the journal/venue
     # authors end at the first period that follows an initial or name run.
     body = txt
@@ -121,7 +142,11 @@ def extract(raw):
         title = re.split(r"\.\s|\barXiv\b|\bSSRN\b|\bPreprint\b|\bIn Proc", after_authors)[0]
     title = title.strip().rstrip(".")
     is_book = bool(re.search(r"\b(Press|Wiley|Springer|Elsevier|MIT Press|Cambridge Univ|Oxford Univ)\b", txt))
-    non_journal = bool(arx or re.search(r"\b(SSRN|OpenReview|Preprint|working paper|mimeo)\b", txt, re.I))
+    # DOI-less conference/proceedings venues resolve poorly on CrossRef; treat as REVIEW, not FLAG
+    # (false-floor lesson 2c).
+    non_journal = bool(arx or re.search(
+        r"\b(SSRN|OpenReview|Preprint|working paper|mimeo|PMLR|ICML|NeurIPS|NIPS|ICLR|MLSys|TMLR|"
+        r"UAI|AAAI|AISTATS|Proc\.|Proceedings|Conference|Symposium|Workshop|Adv\.\s*Neural)\b", txt, re.I))
     return dict(doi=doi, arxiv=arx, year=year, title=title, text=txt, is_book=is_book, non_journal=non_journal)
 
 # ------------------------------------------------------------------ similarity
@@ -248,11 +273,18 @@ def check_entry(key, raw, mailto):
         if sc > best_sc:
             best, best_sc = it, sc
     r["score"] = round(best_sc, 2)
+    my = None
     if best is not None:
         mt, my = cr_title_year(best)
         r["matched_title"] = mt
-    if best_sc >= 0.70:
+    # a right-title / wrong-year citation passes a pure containment check; catch it deterministically
+    # (false-floor lesson 2: the deterministic gate must still verify year, not only existence).
+    year_mismatch = bool(e["year"] and my and abs(int(e["year"]) - int(my)) > 1)
+    if best_sc >= 0.70 and not year_mismatch:
         r.update(verdict="OK", detail=f"CrossRef match (title containment={best_sc:.2f})")
+    elif best_sc >= 0.70 and year_mismatch:
+        r.update(verdict="REVIEW",
+                 detail=f"title matches but YEAR differs (cited {e['year']} vs record {my}); check volume/issue")
     elif best_sc >= 0.45:
         r.update(verdict="REVIEW", detail=f"partial CrossRef match ({best_sc:.2f}); verify by hand")
     else:
@@ -280,6 +312,16 @@ def main():
         print("No bibliography entries found.", file=sys.stderr)
         sys.exit(2)
 
+    unlisted = []
+    if not a.path.endswith(".bib"):
+        uncited, unlisted = reference_parity(tex)
+        print(f"Reference parity: {len(uncited)} listed-but-uncited, {len(unlisted)} cited-but-unlisted")
+        if unlisted:
+            print("  >FLAG< cited but NOT in the bibliography (prints as ??):", ", ".join(unlisted))
+        if uncited:
+            print("  note: listed but never cited:", ", ".join(uncited[:20]) + (" ..." if len(uncited) > 20 else ""))
+        print("=" * 78)
+
     print(f"Checking {len(entries)} references in {a.path}\n" + "=" * 78)
     results = []
     for key, raw in entries:
@@ -304,7 +346,7 @@ def main():
         json.dump(results, open(a.json, "w"), indent=2)
         print(f"[wrote {a.json}]")
 
-    fail = bool(flags) or (a.strict and bool(review))
+    fail = bool(flags) or bool(unlisted) or (a.strict and bool(review))
     sys.exit(1 if fail else 0)
 
 if __name__ == "__main__":
