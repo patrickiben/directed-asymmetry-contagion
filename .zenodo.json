@@ -1,0 +1,18 @@
+{
+  "title": "Anticipating Network Contagions: When Directedness Outperforms Connectedness — analysis code, data, and prediction-first records",
+  "description": "Reproducible analysis pipeline for a falsifiable directed-connectedness control diagnostic across seven contagion networks: non-negative VAR(1) surrogates, Diebold-Yilmaz generalized forecast-error-variance connectedness, interdiction simulation, a per-case symmetrization null, every figure, dated prediction-first records, and a deterministic pre-submission verification harness (clean-clone CI, property and metamorphic tests, a symbolic exact oracle, deterministic and adversarial citation checks). CPU-only, pinned environment, fixed seeds, one-command per-figure regeneration.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "creators": [
+    {"name": "Iben, Patrick", "orcid": "0009-0005-2443-7973"}
+  ],
+  "keywords": [
+    "directed networks",
+    "contagion",
+    "Diebold-Yilmaz connectedness",
+    "network control",
+    "vector autoregression",
+    "reproducibility"
+  ]
+}

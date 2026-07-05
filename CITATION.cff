@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived repository (and the associated paper)."
+title: "Anticipating Network Contagions: When Directedness Outperforms Connectedness — analysis code, data, and prediction-first records"
+abstract: >-
+  Reproducible analysis pipeline for a falsifiable directed-connectedness control diagnostic across seven
+  contagion networks: non-negative VAR(1) surrogates, Diebold-Yilmaz generalized forecast-error-variance
+  connectedness, interdiction simulation, a per-case symmetrization null, figures, dated prediction-first
+  records, and a deterministic pre-submission verification harness. CPU-only, pinned environment, fixed seeds.
+type: software
+authors:
+  - family-names: Iben
+    given-names: Patrick
+    orcid: "https://orcid.org/0009-0005-2443-7973"
+repository-code: "https://github.com/patrickiben/directed-asymmetry-contagion"
+license: MIT
+keywords:
+  - directed networks
+  - contagion
+  - Diebold-Yilmaz connectedness
+  - network control
+  - vector autoregression
+  - reproducibility
