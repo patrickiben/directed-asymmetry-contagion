@@ -1,0 +1,28 @@
+[
+ {
+  "network": "2008 equities",
+  "N": 8,
+  "budget": 9.02,
+  "reductions": {
+   "transmitter (DY-net, ours)": 42.09,
+   "collective-influence": 41.86,
+   "effective-distance": 27.63,
+   "structural-controllability": 4.14,
+   "loudest (reactive)": -22.4
+  },
+  "transmitter_vs_best_crossparadigm": "matches/exceeds all cross-paradigm baselines"
+ },
+ {
+  "network": "COVID-19",
+  "N": 14,
+  "budget": 44.42,
+  "reductions": {
+   "collective-influence": 95.08,
+   "effective-distance": 93.49,
+   "transmitter (DY-net, ours)": 88.28,
+   "structural-controllability": 75.26,
+   "loudest (reactive)": 7.21
+  },
+  "transmitter_vs_best_crossparadigm": "beaten by collective-influence (+95.1% vs +88.3%)"
+ }
+]

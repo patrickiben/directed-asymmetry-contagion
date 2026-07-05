@@ -1,0 +1,92 @@
+[
+ {
+  "twin": "2008 equities",
+  "N": 8,
+  "T": 181,
+  "obs_per_eq": 180,
+  "params": 72,
+  "p_ge_T": false,
+  "transmitter": "US",
+  "residual_cov_condition_number": 108.8,
+  "effective_df_per_eq": 8.54,
+  "max_df_per_eq": 9,
+  "lambda_grid": [
+   0.005,
+   0.0158,
+   0.05,
+   0.158,
+   0.5
+  ],
+  "top_across_lambda": [
+   "US",
+   "US",
+   "US",
+   "US",
+   "UK"
+  ],
+  "transmitter_stable_across_lambda": false,
+  "ledoit_wolf_shrinkage": 0.144,
+  "top_under_ledoit_wolf": "US",
+  "verdict_stable_under_shrinkage": true
+ },
+ {
+  "twin": "COVID-19",
+  "N": 14,
+  "T": 122,
+  "obs_per_eq": 121,
+  "params": 210,
+  "p_ge_T": true,
+  "transmitter": "New Jersey",
+  "residual_cov_condition_number": 628.2,
+  "effective_df_per_eq": 14.96,
+  "max_df_per_eq": 15,
+  "lambda_grid": [
+   0.005,
+   0.0158,
+   0.05,
+   0.158,
+   0.5
+  ],
+  "top_across_lambda": [
+   "New Jersey",
+   "New Jersey",
+   "New Jersey",
+   "New Jersey",
+   "New Jersey"
+  ],
+  "transmitter_stable_across_lambda": true,
+  "ledoit_wolf_shrinkage": 0.162,
+  "top_under_ledoit_wolf": "New Jersey",
+  "verdict_stable_under_shrinkage": true
+ },
+ {
+  "twin": "1997 Asian FX",
+  "N": 9,
+  "T": 135,
+  "obs_per_eq": 134,
+  "params": 90,
+  "p_ge_T": false,
+  "transmitter": "Thai",
+  "residual_cov_condition_number": 18229.9,
+  "effective_df_per_eq": 8.2,
+  "max_df_per_eq": 10,
+  "lambda_grid": [
+   0.005,
+   0.0158,
+   0.05,
+   0.158,
+   0.5
+  ],
+  "top_across_lambda": [
+   "Thai",
+   "Thai",
+   "Thai",
+   "Thai",
+   "Thai"
+  ],
+  "transmitter_stable_across_lambda": true,
+  "ledoit_wolf_shrinkage": 0.229,
+  "top_under_ledoit_wolf": "Thai",
+  "verdict_stable_under_shrinkage": true
+ }
+]
