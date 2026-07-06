@@ -1,5 +1,7 @@
 # Anticipating Network Contagions: When Directedness Outperforms Connectedness
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21211653.svg)](https://doi.org/10.5281/zenodo.21211653)
+
 Analysis code, prediction-first records, and redistributable data for the paper
 **"Anticipating Network Contagions: When Directedness Outperforms Connectedness"** (P. Iben, independent research).
 
@@ -70,5 +72,8 @@ model to decide correctness or existence):
   robustness), with the exact scripts, commands, and a single copy-paste re-run block.
 
 ## Citation & license
-Please cite the paper (and this archive's DOI) when using the code. Code released under the MIT License; the included
+Please cite the paper and this archive's DOI when using the code. Archived on Zenodo: this version (v1.0.0) is
+**[10.5281/zenodo.21211653](https://doi.org/10.5281/zenodo.21211653)**; the all-versions concept DOI is
+[10.5281/zenodo.21211652](https://doi.org/10.5281/zenodo.21211652). Machine-readable metadata is in `CITATION.cff`.
+Code released under the MIT License; the included
 data are public factual series attributed to their providers (see `pilot_3p46_equity/EQUITY_DATA_README.md`).

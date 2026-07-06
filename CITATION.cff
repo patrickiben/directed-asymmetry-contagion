@@ -13,6 +13,16 @@ authors:
     orcid: "https://orcid.org/0009-0005-2443-7973"
 repository-code: "https://github.com/patrickiben/directed-asymmetry-contagion"
 license: MIT
+version: "1.0.0"
+date-released: "2026-07-05"
+doi: "10.5281/zenodo.21211653"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21211653"
+    description: "This version (v1.0.0)"
+  - type: doi
+    value: "10.5281/zenodo.21211652"
+    description: "Concept DOI (all versions)"
 keywords:
   - directed networks
   - contagion
