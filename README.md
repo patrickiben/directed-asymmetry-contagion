@@ -5,6 +5,12 @@
 Analysis code, prediction-first records, and redistributable data for the paper
 **"Anticipating Network Contagions: When Directedness Outperforms Connectedness"** (P. Iben, independent research).
 
+**Author manuscript draft:** [read the PDF](manuscript/anticipating_network_contagions_draft.pdf)
+(5 July 2026; under consideration at *Applied Network Science*, with editor).
+[Version and copyright](manuscript/README.md) ·
+[Manuscript → code → demo map](https://github.com/patrickiben/patrickiben/blob/main/RESEARCH_MAP.md).
+The DOI badge above identifies the **software/data archive**. The manuscript PDF has no assigned preprint DOI.
+
 When a shock spreads through an interfering network, is it better to reinforce the worst-hit unit (*react*) or to
 support the quiet unit that *exports* the cascade (*anticipate*)? Across seven real contagion networks — epidemic,
 financial, environmental, transport, and conflict — a transmitter-targeting controller beats reactive control
@@ -79,3 +85,4 @@ Please cite the paper and this archive's DOI when using the code. Archived on Ze
 [10.5281/zenodo.21211652](https://doi.org/10.5281/zenodo.21211652). Machine-readable metadata is in `CITATION.cff`.
 Code released under the MIT License; the included
 data are public factual series attributed to their providers (see `pilot_3p46_equity/EQUITY_DATA_README.md`).
+The manuscript PDF retains the author's copyright and is excluded from the code's MIT license.
