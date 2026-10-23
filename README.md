@@ -37,7 +37,9 @@ paper, are publicly pre-registered with an external timestamp at **https://osf.i
   - `jhu_confirmed_US.csv` — public Johns Hopkins COVID-19 case data (the one large cached input).
 - `pilot_3p46_equity/` — the 2008 equity-crash network: `equity_deep.py` (pipeline),
   `equity_weekly_close_2007_2010.csv` + `EQUITY_DATA_README.md` (redistributable processed index levels),
-  `PROPOSED_verify_equity_redist.py` (one-command reproduction from the CSV → US transmitter +21%, DY total 81%).
+  `equity_reproduce_from_csv.py --headline` (offline reproduction from the CSV → US transmitter +21%,
+  DY total 81%, transmitter/greedy cascade reductions +42%/−7%). `PROPOSED_verify_equity_redist.py`
+  is a separate exploratory Stooq-daily check and needs additional files, not the bundled CSV.
 
 ## Data
 All inputs are public. COVID is included (`pilot_review/jhu_confirmed_US.csv`); the equity network reproduces from the
@@ -50,7 +52,7 @@ interventions, as stated throughout the paper.
 ## Reproduce
 ```bash
 pip install -r requirements.txt
-python3 pilot_3p46_equity/PROPOSED_verify_equity_redist.py   # equity network from the redistributable CSV
+python3 pilot_3p46_equity/equity_reproduce_from_csv.py --headline  # equity headlines from bundled CSV, seconds
 python3 pilot_review/horizon_auc.py                          # horizon-integrated transmitter robustness
 python3 pilot_review/asia97_transfer.py                      # a prediction-first transfer test (fetches FRED)
 ```

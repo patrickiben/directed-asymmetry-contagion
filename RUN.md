@@ -9,11 +9,16 @@ null and the five controllers — is `pilot_cross_tier/lsa_capstone.py`.
 | What it reproduces | Command |
 |---|---|
 | SI out-of-sample real-data lead (mean +3.3%, sign test p=0.50, housing unstable) | `cd out_of_sample_probe && python3 reproduce_oos.py --offline` |
-| 2008 equity-crash network (US transmitter +21%, DY total 81%) from the bundled CSV | `python3 pilot_3p46_equity/PROPOSED_verify_equity_redist.py` |
+| 2008 equity-crash network (US transmitter +21%, DY total 81%; transmitter/greedy +42%/−7%) from the bundled CSV | `python3 pilot_3p46_equity/equity_reproduce_from_csv.py --headline` |
 | Cross-network scorecard, Fig. 4 (2 confirm / 1 refine / 2 falsify) from cached `*_results.json` | `python3 pilot_review/transfer_scorecard.py` |
 | Held-out COVID-19 benchmark/validity (uses bundled `jhu_confirmed_US.csv`) | `python3 pilot_review/validity_benchmark.py` |
 
 ## Require network (live public data, fetched on first run)
+The equity `--headline` path checks numeric tolerances and exits nonzero on a mismatch. Omit
+`--headline` to also run the slower, separate ARRO/planner comparison. The exploratory
+`PROPOSED_verify_equity_redist.py` instead requires eight manually downloaded daily Stooq files
+under `pilot_3p46_equity/data_redist/`; it is not the bundled-CSV reproduction path.
+
 | Script | Network | Source |
 |---|---|---|
 | `pilot_review/asia97_transfer.py` | 1997 Asian FX | FRED |

@@ -47,6 +47,9 @@ jobs:
       - name: Independent symbolic re-derivation of the GFEVD engine (exact oracle)
         run: python tools/verify_symbolic.py
 
+      - name: Offline equity headlines from the deposited weekly CSV
+        run: python pilot_3p46_equity/equity_reproduce_from_csv.py --headline
+
       - name: Deterministic offline reproduction of the out-of-sample lead
         run: |
           cd out_of_sample_probe

@@ -6,3 +6,6 @@ __pycache__/
 .hypothesis/
 .mutmut-cache
 _reports/
+
+# Local virtual environments
+.venv*/

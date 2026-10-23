@@ -2,7 +2,7 @@
 # Absolute-path / machine-specific-path guard.
 #
 # WHY: a hardcoded /Users/<name>/... or C:\... path is the classic reason a reviewer's
-# fresh clone fails to run. This greps the tracked Python for machine-specific paths and
+# fresh clone fails to run. This scans project source (excluding dependency/cache trees) and
 # fails if any survive outside comments/docstrings-of-record. Runs in CI on a cold runner.
 #
 # Usage: bash tools/check_paths.sh [dir]   (default: repo root)
@@ -20,6 +20,9 @@ echo "==========================================================================
 HITS=$(grep -rnoE "$PATTERN" "$ROOT" \
         --include='*.py' --include='*.sh' --include='*.yml' --include='*.yaml' \
         --exclude='check_paths.sh' \
+        --exclude-dir='.git' --exclude-dir='.venv*' --exclude-dir='venv*' \
+        --exclude-dir='env' --exclude-dir='node_modules' --exclude-dir='__pycache__' \
+        --exclude-dir='.pytest_cache' --exclude-dir='build' --exclude-dir='dist' \
         2>/dev/null | grep -v 'noqa: path')
 
 if [ -n "$HITS" ]; then
