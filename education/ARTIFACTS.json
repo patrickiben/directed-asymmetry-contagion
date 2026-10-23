@@ -1,0 +1,15 @@
+{
+  "prepared_on": "2026-10-23",
+  "companion_markdown": {
+    "file": "COMPANION.md",
+    "sha256": "edae3cc5d95164fbee05f359295b54fbc75b7d0a7e9c4ca5e2dcccc8ba26394b"
+  },
+  "companion_pdf": {
+    "file": "COMPANION.pdf",
+    "sha256": "22ec66c63a88f9c3d47f06d320e1140d3396d8d6b7d5d043c420220c68ec7610",
+    "pages": 11
+  },
+  "basis": "Exact manuscript version specified in README.md. Future manuscript versions require a new fidelity check.",
+  "pdf_preparation": "Rendered from companion Markdown using ReportLab; source SHA-256 embedded in PDF metadata",
+  "review_scope": "AI-assisted source fidelity and numerical checks; PDF pages rendered and visually inspected. No human learner or full scientific validation claimed."
+}

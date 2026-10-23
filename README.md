@@ -11,6 +11,9 @@ Analysis code, prediction-first records, and redistributable data for the paper
 [Manuscript → code → demo map](https://github.com/patrickiben/patrickiben/blob/main/RESEARCH_MAP.md).
 The DOI badge above identifies the **software/data archive**. The manuscript PDF has no assigned preprint DOI.
 
+[Plain-language educational companion](education/README.md): definitions, worked examples,
+source-linked lessons, and exercises with answers for this manuscript draft.
+
 When a shock spreads through an interfering network, is it better to reinforce the worst-hit unit (*react*) or to
 support the quiet unit that *exports* the cascade (*anticipate*)? Across seven real contagion networks — epidemic,
 financial, environmental, transport, and conflict — a transmitter-targeting controller beats reactive control
