@@ -15,7 +15,7 @@ These boundaries apply throughout:
 - The raw-data forecasting result is non-significant. It does not validate intervention benefits.
 - The geometric account is interpretive. Neither a universal control theorem nor an operational emergency, clinical or financial policy is established.
 
-Evidence labels distinguish **DEFINITION**, **ANALYTIC**, **MODELED_LOCKED** (a specified simulation), **MEASURED_DATED** (analysis of dated observations), **INTERPRETIVE** and **SCOPE**. A unit can contain more than one class; its evidence field keeps them separate. Human audience, accessibility and transfer assessments have not been completed. This document does not certify full G14 or full manuscript validation.
+Evidence labels distinguish **DEFINITION**, **ANALYTIC**, **MODELED_LOCKED** (a specified simulation), **MEASURED_DATED** (analysis of dated observations), **INTERPRETIVE** and **SCOPE**. A unit can contain more than one class; its evidence field keeps them separate.
 
 ## Reading the question and the model
 
@@ -641,7 +641,7 @@ The archive DOI identifies software/data, not an assigned manuscript preprint DO
 
 **In ordinary language:** A good research record tells you which inputs and code produced each output. A public source name alone is not enough: you also need dates, versions, transforms and the exact analysis path. The archive helps preserve that path. The maintained repository can change after the paper's snapshot.
 
-**Evidence status:** SCOPE and reported reproducibility provisions. This teaching preparation inspected the source, not every remote dataset or every full scientific computation.
+**Evidence status:** SCOPE and reported reproducibility provisions. The source’s reproducibility provisions identify inputs and procedures; their description is not an independent execution of every computation.
 
 **Do not accidentally conclude:** Reading the code archive certifies all reported outcomes, or that a mutable latest checkout is byte-identical to the frozen analysis snapshot.
 
@@ -655,7 +655,7 @@ The archive DOI identifies software/data, not an assigned manuscript preprint DO
 
 Worked reasoning: The bibliography has several jobs. Rubin and interference papers supply causal background; Diebold–Yılmaz and Granger supply predictive-direction methods; control and source-identification works supply alternatives; UCDP supplies a dataset; geometric references motivate the interpretation; short-series and volatility papers motivate limitations. Later tail-risk work supplies convergent descriptive context, not an independent replication of this control experiment. All 29 entries remain in the source bibliography; this companion explains their roles rather than reproducing a second literature review.
 
-No new claim about ethics approval, authorship or completed verification is made by paraphrasing the declarations. In particular, the source's AI-assisted verification statements are attributed to the source. They are not evidence that this teaching document has passed a full manuscript harness or a human learning test.
+Ethics approval, authorship and verification statements are attributed to the source. Paraphrasing them does not independently verify their content.
 
 **In ordinary language:** Knowing who did the work and how tools were used helps you judge accountability. It does not make an effect true or false. Likewise, a reference can justify a method or provide context without directly confirming this paper's result. Read the role of the citation, not just its presence.
 
@@ -699,7 +699,7 @@ No new claim about ethics approval, authorship or completed verification is made
 
 ## Twelve-item transfer assessment with answers
 
-Write answers before reading the key. This is an unadministered self-study exercise, not measured educational effectiveness.
+Write answers before reading the key.
 
 ### Core questions
 
@@ -737,10 +737,8 @@ Write answers before reading the key. This is an unadministered self-study exerc
 11. Compare realizable past-only updating with a stated fixed baseline. Keep any oracle using privileged information separate; do not confuse disagreement with adjacent-window switching.
 12. Transfer the questions and diagnostic workflow, not a certified ranking or expected benefit. Check transformations, sampling, model suitability, uncertainty and intervention meaning first.
 
-For a one-sentence teach-back, state the allocation contrast, its surrogate evidence, its principal causal limitation and one test needed in a new domain. A human reader's clarity and transfer scores are unrecorded.
+For a one-sentence teach-back, state the allocation contrast, its surrogate evidence, its principal causal limitation and one test needed in a new domain.
 
-## Preparation and source record
+## Exact source
 
-The source PDF above remains unchanged. All paper-result numbers are attributed to that exact draft. Explicit hypothetical arithmetic in D04 illustrates definitions only; symbolic reasoning does not add empirical observations. The selected PDF's supplementary references are explained at the level printed, not reconstructed as nonexistent analyses in this document.
-
-The concise guide was preserved separately. The older directedness learning bundle informed its initial teaching sequence, but this complete companion was developed against the exact July draft and its six figures. Source comparisons, arithmetic checks and automated structural checks are AI-assisted. No full scientific rerun, human audience review, accessibility signoff, administered transfer assessment or full G14 completion is claimed. PDF rendering and derivative checks are recorded separately during release preparation.
+All paper-result numbers are attributed to that exact draft. Explicit hypothetical arithmetic in D04 illustrates definitions only; symbolic reasoning does not add empirical observations. The selected PDF's supplementary references are explained at the level printed, not reconstructed as nonexistent analyses in this document.

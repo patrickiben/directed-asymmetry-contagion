@@ -346,7 +346,7 @@ A sensor network has incomplete observations and unverified links. What transfer
 
 ## Twelve questions to test transfer
 
-Write answers before consulting the key. This is a self-check, not a completed human learning evaluation.
+Write answers before consulting the key.
 
 ### Core questions
 
@@ -386,14 +386,12 @@ Write answers before consulting the key. This is a self-check, not a completed h
 
 ### One-sentence teach-back
 
-Explain the core result to a colleague using four elements: the targeting comparison, its model-based evidence, its main causal/field limitation, and what a new domain must verify. No reader score or author sign-off is claimed here.
+Explain the core result to a colleague using four elements: the targeting comparison, its model-based evidence, its main causal/field limitation, and what a new domain must verify.
 
-## Source and preparation record
+## Exact source
 
 This companion is tied to the exact 5 July 2026 draft linked above. Its SHA-256 is:
 
 b48f19b5a71943f540728fb197cb5d84aeea782a2aaad5a8b6144fe216755509
 
 The manuscript's own reference list, pages 12–13, provides the cited methods and prior work. This teaching text adds no new empirical results. The export/import arithmetic in D2 is explicitly hypothetical. Numerical findings elsewhere are reported as findings of the selected draft, not newly rerun analyses.
-
-The lesson sequence was informed by the existing directedness learning bundle; its broader or later material was not copied as evidence for this draft. AI-assisted source, figure and numerical checks were performed during preparation. Human audience, accessibility and transfer-test reviews have not been completed. This is not a claim of a full G14 pass or manuscript validation.

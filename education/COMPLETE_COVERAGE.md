@@ -1,8 +1,8 @@
 # Complete-companion coverage map
 
-Basis: *Anticipating Network Contagions: When Directedness Outperforms Connectedness*, 5 July 2026, sixteen-page PDF, SHA-256 b48f19b5a71943f540728fb197cb5d84aeea782a2aaad5a8b6144fe216755509. Unit IDs refer to [the complete companion](COMPANION.md). The [concise guide](STUDY_GUIDE.md) is a separate preserved document, not the coverage basis.
+Basis: *Anticipating Network Contagions: When Directedness Outperforms Connectedness*, 5 July 2026, sixteen-page PDF, SHA-256 b48f19b5a71943f540728fb197cb5d84aeea782a2aaad5a8b6144fe216755509. Unit IDs refer to [the complete companion](COMPANION.md). The [concise guide](STUDY_GUIDE.md) offers the shorter route.
 
-This map accounts for every substantive source section, figure and numbered equation. It is a reading-order passage map, not a claim of formal G9 inventory certification, signed G12 freeze, exhaustive nonblank-line G14 accounting or completed human learning review. The printed draft contains no separately numbered tables. Contextual administrative statements and bibliography are handled explicitly below. Unprinted supplementary analyses are explained as references and scope limits, not recreated.
+This map accounts for every substantive source section, figure and numbered equation in reading order. The printed draft contains no separately numbered tables. Contextual administrative statements and bibliography are identified below. Supplementary analyses not printed in the draft are treated as references and scope limits, rather than reconstructed as results.
 
 | Source passage / object | PDF pages | Complete units | Treatment |
 |---|---:|---|---|
@@ -51,4 +51,4 @@ This map accounts for every substantive source section, figure and numbered equa
 | Figure 5a–b: static-versus-MPC decomposition | 16 | D27 | Both settings and distinct protocol |
 | Figure 6a–b: changing leader and controller comparison | 16 | D28 | Eight leaders, full-sample disagreement and past-only/adaptive/oracle |
 
-The glossary defines recurring terms; the twelve-item answered assessment separately tests core ideas, claim boundaries and transfer. The companion adds no empirical outputs. Hypothetical arithmetic is labeled in its unit. References to archived verification are attributed to the source; this teaching preparation is not an independent execution of that archive.
+The glossary defines recurring terms; the twelve-item answered assessment separately tests core ideas, claim boundaries and transfer. The companion adds no empirical outputs. Hypothetical arithmetic is labeled in its unit. References to archived verification are attributed to the source; the explanations are not an independent execution of that archive.
